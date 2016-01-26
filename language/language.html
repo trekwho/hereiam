@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<!--...................................................................
+Catalogue:
+- line 13 head
+- line 21 body - 22 header
+               - 43 main content (44 banner, 62 map, 64 query_box)
+               - 75 intro 
+               - 92 ending
+               - 103 footer
+               - 124 JavaScript
+...................................................................-->
+<html>
+<head>
+	<title>Our Languages丨Wordplay in a Big World</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="jquery-1.11.3.js"></script>
+	<link rel="stylesheet" type="text/css" href="style.css" >
+</head>
+
+<body>
+	<!-- header, for basic info and links -->
+	<header class="container">
+		<div class="links" id="top">
+			<span class="menu-button"><img src="menu.png" alt="menu"></span>
+			<div class="menu">
+				<nav>
+				<ul>
+					<li><a href="#how">How to play</a></li>
+					<!--  <a> target attribute learned from http://www.w3schools.com/tags/att_a_target.asp -->
+					<li><a href="https://en.wikipedia.org/wiki/Lists_of_languages" target="_blank">Lists of languages</a></li>
+					<li><a href="https://en.wikipedia.org/wiki/Country_code" target="_blank">Countries &amp; Areas</a></li>
+				</ul>
+				</nav>
+			</div>
+		</div>
+		<div class="home">
+			<a href="language.html"><img src="home.png" alt="home"></a>
+		</div>
+		<div class="clearfix"></div>
+	</header>
+
+	<!-- main content part, to apply and present API's data-->
+	<div class="banner container">
+		<div class="banner-info text-center">
+			<h1>Our languages</h1>
+		</div>
+		<div class="modules text-center" id="modules">
+			<div class="module1">				
+				<h4>Which one?</h4>
+			</div>
+			<div class="module2" id='find'>
+				<h4>Spoken by?</h4>
+			</div>
+			<div class="module3" id="get_map">
+				<h4>On the map</h4>
+			</div>				
+		</div>
+		<div class="clearfix"></div>
+	</div>
+
+	<div class="container" id="map"></div>
+
+	<div class="container" id="query_box">
+		<form>
+			<!-- new line in textarea skill learned from http://stackoverflow.com/questions/8627902/new-line-in-text-area-->
+	        <p><textarea id="q" rows="5" cols="42">any words you like &#13;&#10;(but at least 15 letters)</textarea></p>
+	        <p><input type="button" id="submit" value="Click me to find which language it is"></p>
+	        <ul id="result_l"></ul>
+	        <ol id="result_c"></ol>
+	    </form>
+	    <div class="clearfix"></div>
+	</div>
+
+	<!-- intro part, introducing how to play with the language data-->
+	<div class="intros container" id="how">
+		<div class="intro-left">
+			<!-- image retrieved from http://www.kent.ac.uk/cewl/images/bigger%20bubbles.jpg -->
+			<img src="intro1.jpg" alt="intro_picture">
+		</div>
+		<div class="intro-middle text-center">
+			<h3>Click "<span>Which one?</span>" module to start</h3>
+			<p>Input or paste some words to find out which language they belong to! Then click "<span>Spoken by?</span>" module for countries and areas speaking this kind of language. Finally, click "<span>On the map</span>" to visually discover those regions.</p>
+		</div>
+		<div class="intro-right">
+			<!-- image retrieved from http://www.filcatholic.org/wp-content/uploads/2015/09/international-mother-language-day_21213.jpg -->
+			<img src="intro2.jpg" alt="intro_picture_2">
+		</div>
+		<div class="clearfix"></div>
+	</div>
+
+	<!-- ending part, reintroducing the topic on language -->
+	<div class="ending container">
+		<div class="ending-info">
+			<h3>Beauty in language</h3>
+			<h5>“The limits of my language means the limits of my world.”</h5>
+			<h5> ― Ludwig Wittgenstein</h5> 
+			<h5><a href="#top">Back to top</a></h5>
+		</div>
+		<div class="clearfix"></div>
+	</div>
+
+	<!-- footer, info about API sources and other external links-->
+	<footer class="container">
+		<div class="thanks">
+			<h3>Special thanks</h3>
+			<a href="http://www.alchemyapi.com/" target="_blank"><img src="al.png" alt="logo_al"></a>
+			<p><a href="http://www.alchemyapi.com/" target="_blank">Alchemy API</a></p>	
+			<a href="https://restcountries.eu/" target="_blank"><img src="re.png" alt="logo_re"></a>
+			<p><a href="https://restcountries.eu/" target="_blank">REST Countries API</a></p>
+			<p><a href="https://developers.google.com/maps/documentation/javascript/" target="_blank"><img src="go.png" alt="logo_go"></a></p>
+			<p><a href="https://developers.google.com/maps/documentation/javascript/" target="_blank">Google Maps API</a></p>
+			<div class="clearfix"></div>
+		</div>
+		<div class="more">
+			<h3>Discover more</h3>
+			<a href="http://greatlanguagegame.com/" target="_blank"><img src="gr.png" alt="logo_gr"></a>
+			<p><a href="http://greatlanguagegame.com/" target="_blank">Great Language Game</a></p>
+			<p><a href="http://quietlyamused.org/blog/2014/03/12/language-confusion/" target="_blank">Data release: language confusion</a></p>
+		</div>
+		<div class="clearfix"></div>
+	</footer>
+
+	<!-- JavaScript begins here-->
+	<script type="text/javascript"> 
+
+		//To know the document is ready
+		$(document).ready(function(){
+				console.log("ready");	
+			});
+
+		//present menu content when menu button is clicked
+		$(".menu-button").click(function(){
+			$(".menu ul").slideToggle(function(){
+			});
+		});
+
+		//show the query box when "which one" module being actived
+		$(".module1").click(function(){
+			$("#query_box").slideToggle(function(){
+				//.animate() learned from http://api.jquery.com/animate/
+				$("#query_box").animate({
+				    width: "90%",
+				    marginLeft: "5%",
+				  }, 1000);
+			}); 
+		});
+
+		//create a function to test and return input contents' language kind
+		var getLanguage = function(){
+
+				var typein = $("#q").val();
+				$.ajax({
+					url:"http://gateway-a.watsonplatform.net/calls/text/TextGetLanguage",
+					data:{apikey:"d45fe0893314c606acd716a3fbc5e2669cd17319",
+					text:typein,
+					outputMode:"json",
+					},
+					success: function(response) {
+                        console.log(response);
+                        var result = $("#result_l");
+                        if (response["language"] == "unknown"){
+                        	result.html("<ul id='result_l'><h4>Oops, we have a problem!</h4></ul>");
+                   			result.append("<li>Is it a natural language? C++ is not detectable here!</li><li>Maybe what has been input is too short, please try again.</li>");
+                        } else {
+                    		result.html("<ul id='result_l'><h4>Here is the language:</h4></ul>");
+                       		result.append("<li>" + response["language"] + "</li>");
+          				};
+						// Create global variable, according to http://www.w3schools.com/js/js_scope.asp  
+                    	lang_code = response["iso-639-1"];
+
+                     },
+                    error: function(xhr, status, error) {
+                    	console.log(status);
+                        console.log(error);
+                    }
+				});
+
+			};
+
+		//call the getLanguage function when submitted
+		$("#submit").click(function(){
+			getLanguage();
+		});
+		
+		//create a function to find areas speaking previously detected language
+		var getResult = function(){
+		
+			$.ajax({
+				url:"https://restcountries.eu/rest/v1/lang/" + lang_code,
+				data:{},
+				dataType:"json",
+				success: function(response) {
+                    console.log(response);
+                    var result = $("#result_c");                   
+               		result.html("<ol id='result_c'><h4>Here are the results:</h4><p>( hooray, "+ response.length +" countries and areas speak it! )</p>");
+                    for (var i = 0; i < response.length; i++){
+                    	result.append("<li>" + response[i]["name"] + "</li>")
+                    };
+                    result.append("</ol><a href='#modules'>Back to modules</a>")
+                
+                	myLatLng = [];
+                    for (var i=0; i < response.length; i++){
+                    	lat = response[i]["latlng"][0];
+                    	lng = response[i]["latlng"][1];
+                    	name = response[i]["name"];
+                    	myLatLng.push([lat,lng,name]);                    	
+                	};
+                	console.log(myLatLng);
+                 },
+                error: function(xhr, status, error) {
+                	console.log(status);
+                    console.log(error);
+                    var result = $("#result_c");
+                    result.html("<ol id='result_c'><h4>Oops, we have a problem!</h4><ol>")
+                    result.append("<p>Don't worry, this language is used by people! It's just that our database doesn't have it right now. Sorry!</p>")
+                }
+			});
+
+		};
+
+		//call the getResult function when module being clicked
+		$("#find").click(function(){
+			getResult();
+		});
+
+		//create a function to display maps with markers of certain areas
+		var initMap = function(){
+		 	var map = new google.maps.Map(document.getElementById("map"), {
+			  	//zoom and center setting to make sure that map's initial status is fully presented but not repeated
+			  	zoom: 2,
+			    center: {lat:42.83333333, lng:12.83333333}
+			});
+			//image retrieved from www.iconfinder.com, changed by photoshop
+			var image = 'chat.png';
+		 	var marker, i;
+			for (i = 0; i < myLatLng.length; i++){
+			  	marker = new google.maps.Marker({
+			    position: new google.maps.LatLng(myLatLng[i][0],myLatLng[i][1]),
+			    map: map,
+			    title: myLatLng[i][2],
+			    icon: image
+			  	});	  
+			}; 
+		};		
+
+		//call the map function when module being clicked
+		$("#get_map").click(function(){
+			$("#map").slideToggle(function(){
+				initMap();
+			});
+		});
+		
+	</script>
+	<!-- link for google maps API -->
+    <script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCKyXGz0padGImqQRc4pxHuYxnziFMHRRc&signed_in=true&callback=initMap">
+    </script> 
+</body>
+</html>
