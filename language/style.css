@@ -1,0 +1,720 @@
+/*...................................................................
+Catalogue:
+- line 12 whole page
+- line 57 header
+- line 111 main content
+- line 273 intro & ending part
+- line 370 footer
+- line 408 Responsive design (width < 800px)
+- line 515 Responsive design (width < 800px)
+- line 649 Responsive design (width < 800px)
+...................................................................*/
+/* -----------------------------------------------------------------
+
+The following rules apply to the whole page 
+
+------------------------------------------------------------------ */
+
+* {
+  /* make every element's height and width count with whole space 
+  inside the border (aka. content+ padding+ border) */
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body{
+  background-color: #fff;
+  padding: 0;
+  margin: 0;
+  font-family: 'Oswald', sans-serif;
+}
+
+.container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/*  clearfix trick learned from http://stackoverflow.com/questions/211383/which-method-of-clearfix-is-best */
+.clearfix:before,
+.clearfix:after,
+.container:before,
+.container:after{
+  display: table;
+  content: " ";
+}
+.clearfix:after,
+.container:after{
+  clear: both;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* -----------------------------------------------------------------
+
+These apply to header part
+
+------------------------------------------------------------------ */
+
+.links {
+  background-color: rgba(25, 155, 225, 0.5);
+  padding: 2em 30px;
+  float: left;
+  width: 92%;
+}
+
+.menu-button {
+  display: none;
+}
+
+.menu li{
+  display:inline-block;
+}
+
+.menu a{
+  color: #fff;
+  font-size: 17px;
+  text-decoration: none;
+  margin: 0 20px;
+  font-family: 'Oswald', sans-serif;
+}
+
+.menu a:hover{
+  text-shadow: 2px 2px #0d6bb3;
+}
+
+nav a {
+  position: relative;
+  display: inline-block;
+  outline: none;
+  color: #fff;
+  text-decoration: none;
+  text-shadow: 0 0 1px rgba(255,255,255,0.3);
+  font-size: 1.35em;
+}
+
+.home{
+  float:right;
+  width:7%;
+  background-color: rgba(235, 235, 135, 0.5);
+  padding: 2em 1em;
+}
+
+.home img{
+  margin: auto;
+}
+
+/* -----------------------------------------------------------------
+
+These apply to main content (function & return) part
+
+------------------------------------------------------------------ */
+
+.banner {
+  /* image retrieved from http://universallanguageservice.com/wp-content/uploads/2014/05/One-Size-does-not-fit-all.jpg, changed by photoshop */
+  background: url('languages.jpg') no-repeat;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  min-height: 900px;
+}
+
+.banner-info h1 {
+  color: #fff;
+  font-family: cursive;
+  font-size: 6em;
+}
+
+.banner-info {
+  width:93%;
+  margin: 8em auto 0;
+}
+
+.modules {
+  margin-top: 22em;
+}
+
+.module1,.module2,.module3{
+  width: 32%;
+  float: left;
+  margin-right: 2%;
+  padding: 3em 0 4em 0;
+  cursor: pointer;
+}
+
+.module1 {
+  background-color:rgba(217, 201, 28, 0.6);  
+  /* css3 transitions learned from http://www.w3schools.com/css/css3_transitions.asp */
+  transition: all 1s;
+  -webkit-transition: all 1s;
+  -moz-transition: all 1s;
+}
+
+.module1:hover {
+  background-color: #f8e946;
+  height: 300px;
+  position: relative;
+  bottom: 50px;
+}
+
+.module2{
+  background-color:rgba(176, 24, 16, 0.5); 
+  transition: all 1s;
+  -webkit-transition: all 1s;
+  -moz-transition: all 1s;
+}
+
+.module2:hover{
+  background-color: #ed531d; 
+  height: 300px;
+  position: relative;
+  bottom: 50px;
+}
+
+.module3{
+  background-color:rgba(108, 190, 240, 0.7);
+  transition: all 1s;
+  -webkit-transition: all 1s;
+  -moz-transition: all 1s;
+  margin-right:0;
+}
+
+.module3:hover{
+  background-color: #317bd2;
+  height: 300px;
+  position: relative;
+  bottom: 50px;
+}
+
+.module1 h4,.module2 h4,.module3 h4{
+  color: #fff;
+  font-size: 2.1em;
+  margin-top:0.7em;
+  font-weight: 500;
+  line-height: 1.4em;
+}
+
+#map{
+  display: none;
+  height: 400px;
+  width: 90%;
+  margin-bottom: 1em;
+}
+
+#query_box{
+  display: none;
+  width: 50%;
+  background-color: #5397d8;
+}
+
+form{
+  width: 30%;
+  margin: 0 auto;
+  padding: 1.5em 0;
+}
+
+#query_box textarea, input{
+  width: 100%;
+  text-align: center;
+  color: #3d3d3d;
+  font-size: 14px;
+}
+
+textarea{
+  padding: 2em 0 0 0;
+}
+
+form ul, form ol{
+  margin-left: -30px;
+  color: #e8e7e7;
+  font-size: 13px;
+  line-height: 18px;
+  font-family: Helvetica, sans-serif;
+}
+
+form li{
+  text-transform: capitalize;
+}
+
+form h4{
+  color: #fff;
+  font-size: 20px;
+}
+
+form ol p{
+  padding: 0 0 1em 0;
+  color: #fff;
+  font-size: 12px;
+}
+
+form a{
+  padding: 0.3em 2em;
+  margin-left: 2em; 
+  color: #5397d8;
+  background-color: rgba(248,235,129,0.6);
+  border-radius: 3px;
+  text-decoration: none;
+  font-size: 13px;
+  font-family: Verdana, sans-serif;
+  line-height: 50px;
+  transition: all 1s;
+  -webkit-transition: all 1s;
+  -moz-transition: all 1s;
+}
+
+form a:hover{
+  background-color: rgba(248,235,129,1);
+}
+
+/* -----------------------------------------------------------------
+
+These apply to introduction('how') and ending part
+
+------------------------------------------------------------------ */
+
+.intros {
+  padding: 2em 1em 4em 0;
+}
+
+.intro-left {
+  padding: 0 15px 0 0;
+  float: left;
+  width: 30%
+}
+
+.intro-right {
+  padding: 0 0 0 15px;
+  float: right;
+  width: 30%;
+}
+
+.intro-left img,.intro-right img{
+  width:100%;
+}
+
+.intro-middle{
+  width: 40%;
+  float: left;
+}
+
+.intro-middle h3{
+  color: #3d3d3d;
+  font-size: 2em;
+  font-weight: 500;
+  text-transform: uppercase;
+  margin-top: 0.4em;
+}
+
+.intro-middle p{
+  color: #616161;
+  font-size: 1.2em;
+  font-weight: 300;
+  line-height: 1.6em;
+  margin-top: 18px;
+}
+
+.intro-middle span{
+  color: #fff;
+  background-color: rgba(25, 155, 225, 0.3);
+  padding: 3px;
+}
+
+.ending {
+  /* image retrieved from http://www.grbltd.co.uk/wp-content/uploads/2015/02/language-flag-countries.jpg,changed by photoshop */
+  background: url('countries.png') no-repeat;
+  background-size: cover;
+  -webkit-background-size:cover;
+  -moz-background-size:cover;
+  min-height: 380px;
+  margin-bottom: 2em;
+  position: relative;
+  text-align: center;
+}
+
+.ending-info{
+  width: 50%;
+  margin:auto;
+  background-color: rgba(25, 155, 225,0.8);
+}
+
+.ending-info h3 {
+  font-size: 40px;
+  font-weight: 700;
+  margin: 3em 0 1em 0;
+  padding: 0.2em 0 0 0;
+  /* text-stroke trick & alternative solution learned from https://css-tricks.com/adding-stroke-to-web-text/ */
+  color: #8cbcd8;
+  -webkit-text-fill-color: #fff;
+  -webkit-text-stroke: 1.5px #8cbcd8;
+}
+
+.ending-info h5 {
+  color: #fff;
+  font-size: 14px;
+  margin: 1em 0;
+  line-height: 1.8em;
+  font-weight: 500; 
+}
+
+.ending-info h5 a, .ending-info h5 a:hover, .ending-info h5 a:active, .ending-info h5 a:visited {
+  font-size: 18px;
+  cursor: pointer;
+  text-decoration: none;
+  color: #fff;
+}
+
+/* -----------------------------------------------------------------
+
+These apply to footer part
+
+------------------------------------------------------------------ */
+
+footer {
+  background: #14568e;
+  padding: 4em 0;
+}
+
+.thanks,.more {
+  width: 50%;
+  float: left;
+  padding: 0 4em;
+}
+
+.thanks h3,.more h3{
+  color: #fff;
+  font-size: 2em;
+  text-transform: capitalize;
+  font-weight: 500;
+  margin-bottom:0.8em;
+}
+
+.thanks img, .more img{
+  width: 150px;
+  border-radius: 5px;
+}
+
+.thanks p a,.more p a{
+  color:#ededec;
+  font-weight:300;
+  line-height:1.8em;
+  font-size:14px;
+  text-decoration: none;
+}
+
+/* -----------------------------------------------------------------
+
+Responsive design when width is less than 800px
+
+------------------------------------------------------------------ */
+
+@media screen and (max-width: 800px) {
+
+  .links {
+    padding: 0.9em 15px;
+    width: 92%;
+  }
+
+  .menu a {
+    font-size: 14px;
+    margin: 0 5px;
+  }
+
+  .home {
+    width: 8%;
+    padding: 1em 0.3em;
+  }
+
+  .banner-info {
+    margin: 2.5em auto 0;
+    width: 100%;
+  }
+  .banner-info h1 {
+    font-size: 4.5em;
+  }
+
+  .modules {
+    margin-top: 6.5em;
+  }
+
+  .module1 h4, .module2 h4, .module3 h4 {
+    font-size: 1.55em;
+    margin-top: 0em;
+  }
+
+  .module1, .module2, .module3 {
+    width: 32.5%;
+    margin-right: 1%;
+  }
+
+  .module3{
+    margin-right: 0;
+  }
+
+  .module1:hover, .module2:hover, .module3:hover {
+    height: 200px;
+    bottom: 20px;
+  }
+
+  .banner{
+    min-height: 450px;
+  }
+
+  form{
+    width: 50%;
+  }
+
+  .intros {
+    padding: 2.5em 0 3em 0;
+  }
+
+  .intro-left {
+    padding: 0 10px 0 0;
+    width: 25%;
+  }
+
+  .intro-middle{
+    width: 50%;
+  }
+
+  .intro-right{
+    padding: 0 0 0 10px;
+    width: 25%;
+  }
+
+  .intro-middle h3 {
+    font-size: 1.8em;
+    padding-top: 5px;
+  }
+
+  .intro-middle p {
+    font-size: 1em;
+    margin-top: 0;
+    line-height: 1.5em;
+    overflow: hidden;
+  }
+
+  .ending {
+    min-height: 270px;
+    padding: 3em 0 0 0;
+  }
+
+  .ending-info{
+    width: 70%;
+  }
+
+  .ending-info h3 {
+    margin: 0 0 0.5em 0;  
+  }
+
+}
+
+/* -----------------------------------------------------------------
+
+Responsive design when width is less than 480px
+
+------------------------------------------------------------------ */
+
+@media screen and (max-width: 480px) {
+
+  .links {
+    padding: 0.4em 0;
+    width: 89.5%;
+  }
+
+  .menu-button {
+    display: block;
+    cursor: pointer;
+    position: relative;
+    width: 16%;
+    margin: 0.2em auto 0;
+  }
+
+  .menu ul{
+    display:none;
+    position: absolute;
+    top:43px;
+    left: 4%;
+    width: 82%;
+    z-index: 2;
+    background:rgba(48, 119, 192, 0.5);
+    padding: 10px 0;
+    margin: 0;
+  }
+
+  .menu li{
+    display: block;
+    text-align: center;
+  }
+
+  .menu a{
+    display:block;
+    font-size: 13px;
+    margin: 10px 0 20px 0;
+  }
+
+  .home {
+    width: 9.5%;
+    padding: 0.1em 0;
+  }
+
+  .banner-info h1 {
+    font-size: 2.5em;
+  }
+
+  .modules {
+    margin-top: 5em;
+  }
+
+  .module1 h4, .module2 h4, .module3 h4 {
+    font-size: 0.95em;
+    margin-top: 0.5em;
+    padding:0 5px;
+  }
+
+  .module1, .module2, .module3 {
+    padding: 1em 0px 1.5em 0;
+  }
+
+  .module1:hover, .module2:hover, .module3:hover{
+    height: 100px;
+    bottom: 10px;
+  }
+
+  .banner{
+    min-height: 283px;
+  }
+
+  form{
+    width: 70%;
+  }
+
+  .intros {
+    padding: 1.5em 0 2em 0;
+  }
+
+  .intro-left,.intro-right {
+    width: 80%;
+    margin: 0 10%;
+  }
+
+  .intro-left {
+    padding: 0 5px 0 0;
+  }
+
+  .intro-right {
+    padding: 0 0 0 5px;
+  }
+
+  .intro-middle {
+    width: 100%;
+    margin: 1em auto 1.5em;
+  }
+
+  .intro-middle h3 {
+    font-size: 1.4em;
+  }
+
+  .intro-middle p {
+    font-size: 1em;
+    margin-top: 0px;
+  }
+
+  .ending {
+    min-height: 215px;
+    margin: 1em 0;
+  }
+
+  .ending-info{
+    width: 98%;
+  }
+
+  .ending-info h3{
+    margin: 0.1em 0 0.3em 0;
+  }
+
+  .thanks, .more{
+    padding: 0 2em;
+  }
+
+  .thanks img, .more img{
+    width: 100px;
+    border-radius: 5px;
+  }
+
+}
+/* -----------------------------------------------------------------
+
+Responsive design when width is less than 320px
+
+------------------------------------------------------------------ */
+
+@media screen and (max-width: 320px) {
+
+  .links {
+    width: 85%;
+  }
+
+  .menu-button {
+    width: 27%;
+    margin: 5px auto 0;
+  }
+
+  .menu-button img {
+    width: 35%;
+  }
+
+  .home {
+    width: 13%;
+    padding:0;
+  }
+
+  .banner-info {
+    margin: 2.5em auto 0;
+    width: 100%;
+  }
+
+  .banner-info h1 {
+    font-size: 2.2em;
+  }
+
+  form{
+    width: 90%;
+  }
+
+  .intros {
+    padding: 1.5em 0;
+  }
+
+  .intro-left, .intro-right {
+    width: 90%;
+    margin: 0 5%;
+  }
+
+  .ending {
+    min-height: 225px;
+    padding: 1em 0 0 0;
+  }
+
+  footer {
+    padding: 2em 0;
+  }
+  
+  .thanks, .more {
+    width: 100%;
+    margin-bottom: 1.5em;
+  }
+  
+  .thanks h3, .more h3 {
+    font-size: 1.6em;
+    margin-bottom: 0.6em;
+  }
+
+  .thanks p, .more p {
+    line-height: 1.7em;
+  }
+
+}
