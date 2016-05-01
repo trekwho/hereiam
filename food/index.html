@@ -1,0 +1,569 @@
+<DOCTYPE! html>
+<html>
+    <head>
+        <title>Before you eat 'em</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <script src="d3.js"></script>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div id="vis"></div>
+        <div class="notes">
+            <div id="left_note">
+                <h3>Fun fact</h3>
+                <p id="fact">The average nutrition contents of our daily food (fat: 9.78g, protein: 10.55g, calories: 194.1Kcal) are most similar to fish dishes’ data (fat: 11.46g, protein: 11.58g, calories: 192.1Kcal).</p>
+                <input id="user_generated" type="text" value="upload your own fun fact"/>
+                <button onclick="input()">upload</button>
+            </div>
+            <div id="right_note">
+                <p id="fyi">Hover &amp; click on any bubble for more details.</p>
+                <p><button id="redraw">click me</button> to get back to the beginning.</p>
+                <p><strong>Note:</strong> All original statistics are counted with per 100g food; group statistics being presented here use sub categories' means. For more information, see <a href="https://www.gov.uk/government/publications/composition-of-foods-integrated-dataset-cofid">Composition of foods integrated dataset (CoFID)</a>.</p>
+            </div>
+        </div>
+        <script>
+        //create variable for fun facts
+        var facts = [
+            {"text":"The average nutrition contents of our daily food (fat: 9.78g, protein: 10.55g, calories: 194.1Kcal) are most similar to fish dishes’ data (fat: 11.46g, protein: 11.58g, calories: 192.1Kcal)."},
+            {"text":"Not only does skimmed milk contains less fat than whole milk, but it also has slightly more protein than the latter one."},
+            {"text":"Non-potato snacks are healthier than potato snacks, by means of containing significantly more protein (18.7g to 5.25g)."},
+            {"text":"Lunch time, pizzas or sandwiches? While their calories contents are similar, pizzas on average (fat:7.73g, protein: 12g) have more protein and less fat than sandwiches (fat: 9.45g, protein: 10.07g)."},
+            {"text":"Liqueurs (including egg nog) are the only kind of alcoholic drinks that containing more than 1g fat per 100ml."},
+            {"text":"Though being treated as one of the main criminals for gaining weight, soft drinks actually own less calories than powdered drinks, and they have an average fat content of 0g."},
+            {"text":"Eggs are one of the main protein sources we eat every day, however, they contain more fat (18.49g) than protein (13.6g) on average, which is not the case for fish and meat."},
+            {"text":"Out of all food kinds, partridge is the champion in protein content (29.35g), followed by venison (28.9g), then beef (26.72g)."},
+            {"text":"With similar fat and calories contents, cheese’s protein content (20.66g) is more than 8 times of creams’ (2.48g)."}]
+
+        //create variable for bar chart
+        var collection = [];
+
+        //get client width and height, set scales based on data
+        var width = document.getElementById("vis").clientWidth;
+        var height = document.getElementById("vis").clientHeight;
+        var padding = {top:height/20, bottom:height/10, left:width/10, right:width/10};
+        var color = d3.scale.category20b();
+
+        var y_scale = d3.scale.linear()
+                      .domain([0,110])
+                      .range([height - padding.bottom, padding.top]);
+        
+        var x_scale = d3.scale.linear()
+                      .domain([0,32])
+                      .range([padding.left, width - padding.right]); 
+
+        var r_scale = d3.scale.linear()
+                      .domain([0,1000])
+                      .range([width/50,width/50*6]);
+                      
+        //set up svg and tooltip
+        var svg = d3.select("#vis")
+            .append("svg")
+            .attr("width", width)
+            .attr("height", height);
+
+        var tooltip = d3.select('body')
+            .append('div')
+            .attr('class', 'tooltip');
+
+        //function learned from http://bl.ocks.org/eesur/4e0a69d57d3bfc8a82c2
+        d3.selection.prototype.moveToFront = function() {  
+          return this.each(function(){
+            this.parentNode.appendChild(this);
+          });
+        };
+
+        d3.selection.prototype.moveToBack = function() {  
+            return this.each(function() { 
+                var firstChild = this.parentNode.firstChild; 
+                if (firstChild) { 
+                    this.parentNode.insertBefore(this, firstChild); 
+                } 
+            });
+        };
+
+        //load data to draw charts
+        d3.json("mean.json", function(error, json){
+            if (error) return console.warn(error);
+
+            //push all data into collection array for comparison
+            collection.push({"name":json[0]["name"],"fat":json[0]["fat"],"protein":json[0]["protein"]});
+            for(child of json[0]["children"]){
+                collection.push({"name":child["name"],"fat":child["fat"],"protein":child["protein"]});
+                if (child["children"] != []){
+                    for (grandchild of child["children"]){
+                        collection.push({"name":grandchild["name"],"fat":grandchild["fat"],"protein":grandchild["protein"]});
+                        if (grandchild["children"] != []){
+                            for (grandgrandchild of grandchild["children"]){
+                                collection.push({"name":grandgrandchild["name"],"fat":grandgrandchild["fat"],"protein":grandgrandchild["protein"]});
+                            }
+                        }
+                    }
+                }
+            }
+
+            //reuse code when every time need to draw
+            function draw(){
+                //change width, height and padding while window resize
+                width = document.getElementById("vis").clientWidth;
+                height = document.getElementById("vis").clientHeight;
+                padding = {top:height/20, bottom:height/10, left:width/10, right:width/10};
+                y_scale
+                    .range([height - padding.bottom, padding.top]);
+                x_scale
+                    .range([padding.left, width - padding.right]); 
+                r_scale
+                    .range([width/50,width/50*6]);
+                svg
+                    .attr("width", width)
+                    .attr("height", height);
+                
+                //first get rid of existed charts when redraw
+                svg.selectAll("g.bubble, g.left, g.right")
+                    .transition().duration(500).ease("sin-in-out")
+                    .style('opacity',0)
+                    .remove();
+                svg.selectAll("g.axis, .name, .label, g.bar_lable, .bar_title, .bar_button, #title, #subtitle")
+                    .remove();
+
+                //add title for this visual work
+                svg.append("text")
+                    .attr("id","title")
+                    .attr("x",padding.left)
+                    .attr("y",height/5)
+                    .text("Before you eat 'em")
+                    .style("fill","#8182a7");
+                svg.append("text")
+                    .attr("id","subtitle")
+                    .attr("x",padding.left)
+                    .attr("y",height/5 + 30)
+                    .text("Let's know more about them.")
+                    .style("fill","#fff");
+
+                //set scale for bar chart
+                var bar_y_scale = d3.scale.linear()
+                        .domain([0,9])
+                        .range([padding.top + 10, (height - padding.top - padding.bottom - 10 )/2]);
+                var bar_x_left_scale = d3.scale.linear()
+                        .domain([20,30])
+                        .range([(width - padding.left -padding.right)/30,(width - padding.left -padding.right)/6]);
+                var bar_x_right_scale = d3.scale.linear()
+                        .domain([0,100])
+                        .range([(width - padding.left -padding.right)/30,(width - padding.left -padding.right)/6]);
+
+                //sort and get top food lists for both protein and fat contents
+                collection.sort(function(a, b){return b["protein"]-a["protein"]});
+                protein_sort = collection.slice(0,10);
+                collection.sort(function(a, b){return b["fat"]-a["fat"]});
+                fat_sort = collection.slice(0,10);
+                
+                //start to draw bar chart's title and button
+                svg.append("text")
+                    .attr("class","bar_title")
+                    .attr("x",padding.left+(width - padding.left -padding.right)/3*2)
+                    .attr("y",padding.top)
+                    .text("Food with highest protein content (per 100g)")
+                    .style({'fill':'#8182a7', 'font-weight':'500'});
+
+                //'foreignObject' learned from http://stackoverflow.com/questions/13241475/how-do-i-include-newlines-in-labels-in-d3-charts
+                var barButton = svg.append('foreignObject')
+                    .attr({
+                        'class': 'bar_button',
+                        'x': padding.left+(width - padding.left -padding.right)/9*8,
+                        'y': padding.top + height/20,
+                     })
+                     .html("See top</br>fat containers")
+                     .on("click",getFat);
+
+                //when draw left oriented bars, change 'x' relatively
+                var left_bars = svg.append('g')
+                      .attr("transform", "translate("+(padding.left+(width - padding.left -padding.right)/3*2)+",0)")
+                      .attr('class','left')
+                      .selectAll('rect')
+                      .data(protein_sort)
+                      .enter()
+                      .append('rect')
+                      .attr('height',height/35)
+                      .attr('x',function(d){return (width - padding.left -padding.right)/6 - bar_x_left_scale(d["protein"]);})
+                      .attr('y',function(d,i){ return bar_y_scale(i); })
+                      .style('fill','#8182a7')
+                      .attr('width',function(d){ return 0; })
+                      .transition()
+                      .duration(1000)
+                      .attr("width", function(d) {return bar_x_left_scale(d["protein"]); });
+
+                var right_bars = svg.append('g')
+                      .attr("transform", "translate("+(padding.left+(width - padding.left -padding.right)/6*5)+",0)")
+                      .attr('class','right')
+                      .selectAll('rect')
+                      .data(protein_sort)
+                      .enter()
+                      .append('rect')
+                      .attr('height',height/35)
+                      .attr('x',0)
+                      .attr('y',function(d,i){ return bar_y_scale(i); })
+                      .style('fill','#fff')
+                      .attr('width',function(d){ return 0; })
+                      .transition()
+                      .duration(1000)
+                      .attr("width", function(d) {return bar_x_right_scale(d["fat"]); });
+
+                var left_text = svg.append('g')
+                      .attr("transform", "translate("+(padding.left+(width - padding.left -padding.right)/3*2)+",0)")
+                      .attr("class","bar_lable")
+                      .selectAll("text")
+                      .data(protein_sort)
+                      .enter()
+                      .append("text")
+                      //adjust 'x' to display properly on mobile
+                      .attr({'x':function(d) {return (width - padding.left -padding.right)/6 - bar_x_left_scale(d["protein"]) - 15; },
+                             'y':function(d,i){ return bar_y_scale(i)+ 8; }})
+                      .text(function(d){ return d["name"]+" "+Number(d["protein"]).toFixed(1)+"g";})
+                      .style({'fill':'#fff'});
+
+                var right_text = svg.append('g')
+                      .attr("transform", "translate("+(padding.left+(width - padding.left -padding.right)/6*5)+",0)")
+                      .attr("class","bar_lable")
+                      .selectAll("text")
+                      .data(protein_sort)
+                      .enter()
+                      .append("text")
+                      .attr('x',function(d) {return bar_x_right_scale(d["fat"])-(width - padding.left -padding.right)/30; })
+                      .attr('y',function(d,i){ return bar_y_scale(i) + 8; })
+                      .text(function(d){ return Number(d["fat"]).toFixed(1)+"g";})
+                      .style({'fill':'#8182a7', 'font-weight':'500'});
+
+                //draw another set of bar charts when button clicked
+                function getFat(){      
+                    svg.selectAll("g.left, g.right")
+                        .transition().duration(500).ease("sin-in-out")
+                        .style('opacity',0)
+                        .remove();
+                    svg.selectAll("g.bar_lable, .bar_title, .bar_button")
+                        .remove();
+
+                    bar_x_left_scale 
+                        .domain([20,100]);
+                    bar_x_right_scale
+                        .domain([0,80]);
+
+                    svg.append("text")
+                        .attr("class","bar_title")
+                        .attr("x",padding.left+(width - padding.left -padding.right)/3*2)
+                        .attr("y",padding.top)
+                        .text("Food with highest fat content (per 100g)")
+                        .style({'fill':'#8182a7', 'font-weight':'500'});
+
+                    var left_bars = svg.append('g')
+                          .attr("transform", "translate("+(padding.left+(width - padding.left -padding.right)/3*2)+",0)")
+                          .attr('class','left')
+                          .selectAll('rect')
+                          .data(fat_sort)
+                          .enter()
+                          .append('rect')
+                          .attr('height',height/35)
+                          .attr('x',function(d){return (width - padding.left -padding.right)/6 - bar_x_left_scale(d["fat"]);})
+                          .attr('y',function(d,i){ return bar_y_scale(i); })
+                          .style('fill','#fff')
+                          .attr('width',function(d){ return 0; })
+                          .transition()
+                          .duration(1000)
+                          .attr("width", function(d) {return bar_x_left_scale(d["fat"]); });
+
+                    var right_bars = svg.append('g')
+                          .attr("transform", "translate("+(padding.left+(width - padding.left -padding.right)/6*5)+",0)")
+                          .attr('class','right')
+                          .selectAll('rect')
+                          .data(fat_sort)
+                          .enter()
+                          .append('rect')
+                          .attr('height',height/35)
+                          .attr('x',0)
+                          .attr('y',function(d,i){ return bar_y_scale(i); })
+                          .style('fill','#8182a7')
+                          .attr('width',function(d){ return 0; })
+                          .transition()
+                          .duration(1000)
+                          .attr("width", function(d) {return bar_x_right_scale(d["protein"]); });
+
+                    var left_text = svg.append('g')
+                          .attr("transform", "translate("+(padding.left+(width - padding.left -padding.right)/3*2)+",0)")
+                          .attr("class","bar_lable")
+                          .selectAll("text")
+                          .data(fat_sort)
+                          .enter()
+                          .append("text")
+                          .attr({'x':function(d) {return (width - padding.left -padding.right)/6 - bar_x_left_scale(d["fat"]) - 45; },
+                                 'y':function(d,i){ return bar_y_scale(i)+ 8; }})
+                          .text(function(d){ return d["name"]+" "+Number(d["fat"]).toFixed(1)+"g";})
+                          .style({'fill':'#8182a7', 'font-weight':'500'});
+
+                    var right_text = svg.append('g')
+                          .attr("transform", "translate("+(padding.left+(width - padding.left -padding.right)/6*5)+",0)")
+                          .attr("class","bar_lable")
+                          .selectAll("text")
+                          .data(fat_sort)
+                          .enter()
+                          .append("text")
+                          .attr('x',function(d) {return bar_x_right_scale(d["protein"])-(width - padding.left -padding.right)/30; })
+                          .attr('y',function(d,i){ return bar_y_scale(i) + 8; })
+                          .text(function(d){ return Number(d["protein"]).toFixed(1)+"g";})
+                          .style({'fill':'#fff'});
+
+                }
+                //start to draw the bubble chart
+                var bubbles = svg.append("g")
+                    .attr("transform", "translate(0,0)")
+                    .attr("class","bubble")
+                    .selectAll(".bubble")
+                    .data(json)
+                    .enter();
+
+                bubbles.append("circle")
+                    .attr("class","bubble circle")
+                    .attr("r", function(d){ return r_scale(d["energy"]); })
+                    .attr("cx", function(d){ return x_scale(d["protein"]); })
+                    .attr("cy", function(d){ return y_scale(d["fat"]); })
+                    .style("fill", function(d) { return color(d["name"]); })
+                    .style("opacity",0.6);
+
+                var labels = svg.append("g")
+                    .attr("transform","translate(0,0)")
+                    .attr("class","name")
+                    .selectAll(".name")
+                    .data(json)
+                    .enter();
+
+                labels.append("text")
+                    .attr("class","name")
+                    .attr("x", function(d){ return x_scale(d["protein"]); })
+                    .attr("y", function(d){ return y_scale(d["fat"]) + 5; })
+                    .attr("text-anchor", "middle")
+                    .text(function(d){ return d["name"]; })
+                    .style({
+                        "fill":"white", 
+                        "font-family":"Helvetica Neue, Helvetica, Arial, sans-serif",
+                        "font-size": "12px",
+                        "font-weight":500
+                    });
+
+                //add events to bubbles
+                d3.selectAll("circle.bubble")
+                    .on('mouseover', mouseOver)
+                    .on('mouseout', mouseOut)
+                    .on('click',clicked);
+
+                //draw axis and labels
+                var yAxis = d3.svg.axis()
+                        .scale(y_scale)
+                        .orient('left');
+                    
+                var xAxis = d3.svg.axis()
+                        .scale(x_scale)
+                        .orient('bottom');
+
+                svg.append("g")
+                    .attr("class","y axis")
+                    .attr('transform', 'translate(' + (width + padding.left - padding.right)/2 + ',0)')
+                    .call(yAxis);
+
+                svg.append("g")
+                    .attr("class", "x axis")
+                    .attr('transform','translate(0, ' + (height - padding.bottom)/2 + ')')
+                    .call(xAxis);
+
+                svg.append("text")
+                    .attr("class", "x label")
+                    .attr("text-anchor", "middle")
+                    .attr("x", width - padding.right)
+                    .attr("y", (height - padding.bottom)/2 - 20)
+                    .text("Protein (g)")
+                    .style("opacity",0.6);
+
+                svg.append("text")
+                    .attr("class", "y label")
+                    .attr("text-anchor", "middle")
+                    .attr("y", (width+padding.left-padding.right)/2 + 20)
+                    .attr("x", -50)
+                    .attr("dy", ".75em")
+                    .attr("transform", "rotate(-90)")
+                    .text("Fat (g)")
+                    .style("opacity",0.6);
+            }
+            draw();
+
+            d3.select(window).on('resize', draw);
+            
+            d3.select('#redraw')
+                .on("click",function(){
+                    console.log("ready to redraw");
+                    draw();
+            });
+            
+
+            function mouseOver(d) {
+                var ene = Number(d["energy"]).toFixed(1);
+                var fat = Number(d["fat"]).toFixed(2);
+                var pro = Number(d["protein"]).toFixed(2);
+
+                tooltip
+                    .style('display', null)
+                    .style('top', (d3.event.pageY - 120) + "px")
+                    .style('left', (d3.event.pageX) + "px")
+                    .html('<p>Category: ' + d["category"] + '<br>Calories: ' + ene + ' Kcal<br>Fat: ' + fat + ' g<br>Protein: ' + pro + ' g</p>');
+
+                d3.select(this)
+                    .transition(1000)
+                    .attr('r', r_scale(d["energy"])*30/31);
+
+                d3.select(this)
+                    .moveToFront();
+                
+            }
+
+            function mouseOut(d){
+                d3.select(this)
+                    .transition(1000)
+                    .attr('r', r_scale(d["energy"]));
+
+                d3.select(this)
+                    .moveToBack();
+
+                tooltip
+                    .style('display', 'none');
+
+            }
+
+            function clicked(d){
+                //ignore the click event if it was suppressed
+                if (d3.event.defaultPrevented) return;
+
+                console.log('clicked');
+                svg.selectAll("#title, #subtitle")
+                    .remove();
+                expand(d);
+            }
+
+            //create the function to expand bubble
+            function expand(original_data){
+                //only expand if bubble's data has children
+                if(original_data["children"].length > 0){
+                    //randomly display fun fact, learned from http://stackoverflow.com/questions/17632519/how-do-i-display-randomly-chosen-text-with-an-associated-image
+                    var fact = facts[Math.floor(Math.random() * facts.length)];
+                    d3.select('#fact').html('<p id="fact">' + fact["text"] + '</p>');
+
+                    //set original bubbles to nearly transparent, and remove original labels for better visual effect
+                    svg.selectAll("g.bubble")
+                        .transition().duration(800).ease("sin-in-out")
+                        .attr("opacity",0.1);
+                    svg.selectAll("g.name")
+                        .remove();
+
+                    var bubbles = svg.append("g")
+                        .attr("transform", "translate(0,0)")
+                        .attr("class","bubble")
+                        .selectAll(".bubble")
+                        .data(original_data["children"])
+                        .enter();
+
+                    bubbles
+                        .append("circle")
+                        .attr("class","bubble circle")
+                        //to make bubbles move from original position to new positions
+                        .style("fill", color(original_data["name"]))
+                        .style("opacity",0.6)
+                        .attr("r", r_scale(original_data["energy"]))
+                        .attr("cx", x_scale(original_data["protein"]))
+                        .attr("cy", y_scale(original_data["fat"]))
+                        .transition().duration(1000).ease("sin-in-out")
+                        .attr("r", function(d){return r_scale(d["energy"]);})
+                        .attr("cx", function(d){return x_scale(d["protein"]);})
+                        .attr("cy", function(d){return y_scale(d["fat"]);})
+                        .style("fill", function(d){return color(d["name"]);});
+
+                     var labels = svg.append("g")
+                        .attr("class","name")
+                        .attr("transform","translate(0,0)")
+                        .selectAll(".name")
+                        .data(original_data["children"])
+                        .enter();
+                    
+                    labels
+                        .append("text")
+                        .attr("class","name")
+                        .text(function(d){return d["name"];})
+                        .style({
+                            "fill":"white", 
+                            "font-family":"Helvetica, Arial, sans-serif",
+                            "font-size": "12px",
+                            "font-weight":300
+                        })
+                        .attr("text-anchor", "middle")
+                        .attr("x", x_scale(original_data["protein"]))
+                        .attr("y", y_scale(original_data["fat"] + 5))
+                        .transition().duration(1000).ease("sin-in-out")
+                        .attr("x", function(d){return x_scale(d["protein"]);})
+                        .attr("y", function(d){return y_scale(d["fat"]) + 5;});
+
+                    //function relax() to deal with label collision, learned https://www.safaribooksonline.com/blog/2014/03/11/solving-d3-label-placement-constraint-relaxing/
+                    var alpha = 0.5;
+                    var spacing = 8;
+
+                    function relax(){
+                        again = false;
+                        svg.selectAll(".name")
+                            .each(function(d,i){
+                            a = this;
+                            da = d3.select(a);
+                            y1 = da.attr("y");
+                            svg.selectAll(".name")
+                                .each(function(d,j){
+                                b = this;
+                                if (a == b) return;
+                                db = d3.select(b);
+                                if (da.attr("text-anchor") != db.attr("text-anchor")) return;
+                                y2 = db.attr("y");
+                                deltaY = y1 - y2;
+                                if (Math.abs(deltaY) > spacing) return;
+                                again = true;
+                                sign = deltaY > 0 ? 1 : -1;
+                                adjust = sign * alpha;
+                                da.attr("y",+y1 + adjust);
+                                db.attr("y",+y2 - adjust);
+                            })
+                        })
+                        if(again){
+                            setTimeout(relax, 10)
+                        }
+                    }
+                    relax();
+
+                    tooltip
+                        .selectAll('.tooltip')
+                        .data(original_data["children"])
+                        .enter();
+
+                    d3.selectAll("circle.bubble")
+                        .on('mouseover', mouseOver)
+                        .on('mouseout', mouseOut)
+                        .on('click',clicked);
+
+                    d3.select('#fyi').html('<p>Hover &amp; click on any bubble for more details.</p>')
+                }
+                else
+                {
+                    //give explanation for why not draw new bubbles
+                    console.log("no more child");
+                    d3.select('#fyi').html('<p>Oops, no more sub categories for this kind of food!</p>')
+                }
+            }
+
+        })
+        
+        //insert user generated content into facts to be displayed
+        function input(){
+            facts.push({"text":document.getElementById('user_generated').value});
+        }
+        </script>
+    </body>
+</html>
