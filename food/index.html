@@ -413,6 +413,7 @@
                     .attr("x", width - padding.right)
                     .attr("y", (height - padding.bottom)/2 + 25)
                     .text("Protein (g)")
+                    .style("font-size",'10px')
                     .style("opacity",0.3);
 
                 svg.append("text")
@@ -422,6 +423,7 @@
                     .attr("x", (width + padding.left - padding.right)/2 + 30)
                     .attr("dy", ".75em")
                     .text("Fat (g)")
+                    .style("font-size",'10px')
                     .style("opacity",0.3);
 
                 d3.select('#fyi').html('<p>Hover &amp; click on any bubble for more details.</p>')
