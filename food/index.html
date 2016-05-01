@@ -146,10 +146,10 @@
                         .range([padding.top + 10, (height - padding.top - padding.bottom - 10 )/2]);
                 var bar_x_left_scale = d3.scale.linear()
                         .domain([20,30])
-                        .range([(width - padding.left -padding.right)/30,(width - padding.left -padding.right)/6]);
+                        .range([(width - padding.left -padding.right)/30,(width - padding.left -padding.right)/4]);
                 var bar_x_right_scale = d3.scale.linear()
-                        .domain([0,100])
-                        .range([(width - padding.left -padding.right)/30,(width - padding.left -padding.right)/6]);
+                        .domain([0,50])
+                        .range([(width - padding.left -padding.right)/60,(width - padding.left -padding.right)/4]);
 
                 //sort and get top food lists for both protein and fat contents
                 collection.sort(function(a, b){return b["protein"]-a["protein"]});
@@ -160,7 +160,7 @@
                 //start to draw bar chart's title and button
                 svg.append("text")
                     .attr("class","bar_title")
-                    .attr("x",padding.left+(width - padding.left -padding.right)/3*2)
+                    .attr("x",padding.left+(width - padding.left -padding.right)/3*2 - 40)
                     .attr("y",padding.top)
                     .text("Food with highest protein content (per 100g)")
                     .style({'fill':'#8182a7', 'font-weight':'500'});
@@ -177,14 +177,14 @@
 
                 //when draw left oriented bars, change 'x' relatively
                 var left_bars = svg.append('g')
-                      .attr("transform", "translate("+(padding.left+(width - padding.left -padding.right)/3*2)+",0)")
+                      .attr("transform", "translate("+(padding.left+ (width - padding.left -padding.right)/2+5)+",0)")
                       .attr('class','left')
                       .selectAll('rect')
                       .data(protein_sort)
                       .enter()
                       .append('rect')
                       .attr('height',height/35)
-                      .attr('x',function(d){return (width - padding.left -padding.right)/6 - bar_x_left_scale(d["protein"]);})
+                      .attr('x',function(d){return (width - padding.left -padding.right)/4 - bar_x_left_scale(d["protein"]);})
                       .attr('y',function(d,i){ return bar_y_scale(i); })
                       .style('fill','#8182a7')
                       .attr('width',function(d){ return 0; })
@@ -193,7 +193,7 @@
                       .attr("width", function(d) {return bar_x_left_scale(d["protein"]); });
 
                 var right_bars = svg.append('g')
-                      .attr("transform", "translate("+(padding.left+(width - padding.left -padding.right)/6*5)+",0)")
+                      .attr("transform", "translate("+(padding.left+(width - padding.left -padding.right)/4*3)+",0)")
                       .attr('class','right')
                       .selectAll('rect')
                       .data(protein_sort)
@@ -216,19 +216,19 @@
                       .enter()
                       .append("text")
                       //adjust 'x' to display properly on mobile
-                      .attr({'x':function(d) {return (width - padding.left -padding.right)/6 - bar_x_left_scale(d["protein"]) - 15; },
+                      .attr({'x':function(d) {return (width - padding.left -padding.right)/4 - bar_x_left_scale(d["protein"]) - width/8; },
                              'y':function(d,i){ return bar_y_scale(i)+ 8; }})
                       .text(function(d){ return d["name"]+" "+Number(d["protein"]).toFixed(1)+"g";})
                       .style({'fill':'#fff'});
 
                 var right_text = svg.append('g')
-                      .attr("transform", "translate("+(padding.left+(width - padding.left -padding.right)/6*5)+",0)")
+                      .attr("transform", "translate("+(padding.left+(width - padding.left -padding.right)/4*3)+",0)")
                       .attr("class","bar_lable")
                       .selectAll("text")
                       .data(protein_sort)
                       .enter()
                       .append("text")
-                      .attr('x',function(d) {return bar_x_right_scale(d["fat"])-(width - padding.left -padding.right)/30; })
+                      .attr('x',function(d) {return bar_x_right_scale(d["fat"])-(width - padding.left -padding.right)/37; })
                       .attr('y',function(d,i){ return bar_y_scale(i) + 8; })
                       .text(function(d){ return Number(d["fat"]).toFixed(1)+"g";})
                       .style({'fill':'#8182a7', 'font-weight':'500'});
@@ -243,26 +243,28 @@
                         .remove();
 
                     bar_x_left_scale 
-                        .domain([20,100]);
+                        .domain([-40,100])
+                        .range([(width - padding.left -padding.right)/30,(width - padding.left -padding.right)/12*5]);
                     bar_x_right_scale
-                        .domain([0,80]);
+                        .domain([0,30])
+                        .range([(width - padding.left -padding.right)/20,(width - padding.left -padding.right)/5]);;
 
                     svg.append("text")
                         .attr("class","bar_title")
-                        .attr("x",padding.left+(width - padding.left -padding.right)/3*2)
+                        .attr("x",padding.left+(width - padding.left -padding.right)/3*2 - 40)
                         .attr("y",padding.top)
                         .text("Food with highest fat content (per 100g)")
                         .style({'fill':'#8182a7', 'font-weight':'500'});
 
                     var left_bars = svg.append('g')
-                          .attr("transform", "translate("+(padding.left+(width - padding.left -padding.right)/3*2)+",0)")
+                          .attr("transform", "translate("+(padding.left+(width - padding.left -padding.right)/2+5)+",0)")
                           .attr('class','left')
                           .selectAll('rect')
                           .data(fat_sort)
                           .enter()
                           .append('rect')
                           .attr('height',height/35)
-                          .attr('x',function(d){return (width - padding.left -padding.right)/6 - bar_x_left_scale(d["fat"]);})
+                          .attr('x',function(d){return (width - padding.left -padding.right)/12*5 - bar_x_left_scale(d["fat"]);})
                           .attr('y',function(d,i){ return bar_y_scale(i); })
                           .style('fill','#fff')
                           .attr('width',function(d){ return 0; })
@@ -271,7 +273,7 @@
                           .attr("width", function(d) {return bar_x_left_scale(d["fat"]); });
 
                     var right_bars = svg.append('g')
-                          .attr("transform", "translate("+(padding.left+(width - padding.left -padding.right)/6*5)+",0)")
+                          .attr("transform", "translate("+(padding.left+(width - padding.left -padding.right)/12*11)+",0)")
                           .attr('class','right')
                           .selectAll('rect')
                           .data(fat_sort)
@@ -293,19 +295,19 @@
                           .data(fat_sort)
                           .enter()
                           .append("text")
-                          .attr({'x':function(d) {return (width - padding.left -padding.right)/6 - bar_x_left_scale(d["fat"]) - 45; },
+                          .attr({'x':function(d) {return (width - padding.left -padding.right)/12*5 - bar_x_left_scale(d["fat"]) - width/8; },
                                  'y':function(d,i){ return bar_y_scale(i)+ 8; }})
                           .text(function(d){ return d["name"]+" "+Number(d["fat"]).toFixed(1)+"g";})
                           .style({'fill':'#8182a7', 'font-weight':'500'});
 
                     var right_text = svg.append('g')
-                          .attr("transform", "translate("+(padding.left+(width - padding.left -padding.right)/6*5)+",0)")
+                          .attr("transform", "translate("+(padding.left+(width - padding.left -padding.right)/12*11)+",0)")
                           .attr("class","bar_lable")
                           .selectAll("text")
                           .data(fat_sort)
                           .enter()
                           .append("text")
-                          .attr('x',function(d) {return bar_x_right_scale(d["protein"])-(width - padding.left -padding.right)/30; })
+                          .attr('x',function(d) {return bar_x_right_scale(d["protein"])-(width - padding.left -padding.right)/25; })
                           .attr('y',function(d,i){ return bar_y_scale(i) + 8; })
                           .text(function(d){ return Number(d["protein"]).toFixed(1)+"g";})
                           .style({'fill':'#fff'});
@@ -353,6 +355,22 @@
                     .on('mouseout', mouseOut)
                     .on('click',clicked);
 
+                d3.selection.prototype.dblTap = function(callback) {
+                    var last = 0;
+                    return this.each(function() {
+                        d3.select(this).on("touchstart", function(e) {
+                            if ((d3.event.timeStamp - last) < 500) {
+                            return callback(e);
+                            }
+                        last = d3.event.timeStamp;
+                        });
+                    });
+                }
+
+                d3.selectAll("circle.bubble").dblTap(function(){
+                    alert("hi!");
+                });
+
                 //draw axis and labels
                 var yAxis = d3.svg.axis()
                         .scale(y_scale)
@@ -376,17 +394,17 @@
                     .attr("class", "x label")
                     .attr("text-anchor", "middle")
                     .attr("x", width - padding.right)
-                    .attr("y", (height - padding.bottom)/2 - 20)
+                    .attr("y", (height - padding.bottom)/2 + 25)
                     .text("Protein (g)")
                     .style("opacity",0.3);
 
                 svg.append("text")
                     .attr("class", "y label")
                     .attr("text-anchor", "middle")
-                    .attr("y", (width+padding.left-padding.right)/2 + 20)
-                    .attr("x", -50)
+                    .attr("y", height - padding.bottom)
+                    .attr("x", (width + padding.left - padding.right)/2 + 30)
                     .attr("dy", ".75em")
-                    .attr("transform", "rotate(-90)")
+                    // .attr("transform", "rotate(-90)")
                     .text("Fat (g)")
                     .style("opacity",0.3);
             }
