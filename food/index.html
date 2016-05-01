@@ -17,7 +17,7 @@
                 <button onclick="input()">upload</button>
             </div>
             <div id="right_note">
-                <p id="fyi">Hover &amp; click on any bubble for more details.</p>
+                <p id="fyi">Hover &amp; click on any bubble for more details (tap and double tap if you are using mobile divices).</p>
                 <p><button id="redraw">click me</button> to get back to the beginning.</p>
                 <p><strong>Note:</strong> All original statistics are counted with per 100g food; group statistics being presented here use sub categories' means. For more information, see <a href="https://www.gov.uk/government/publications/composition-of-foods-integrated-dataset-cofid">Composition of foods integrated dataset (CoFID)</a>.</p>
             </div>
@@ -355,6 +355,7 @@
                     .on('mouseout', mouseOut)
                     .on('click',clicked);
 
+                //for mobile's touch events, learned from http://bl.ocks.org/jczaplew/7018691
                 d3.selection.prototype.dblTap = function(callback) {
                     var last = 0;
                     return this.each(function() {
@@ -368,7 +369,7 @@
                 }
 
                 d3.selectAll("circle.bubble").dblTap(function(){
-                    alert("hi!");
+                    clicked();
                 });
 
                 //draw axis and labels
@@ -566,7 +567,7 @@
                         .on('mouseout', mouseOut)
                         .on('click',clicked);
 
-                    d3.select('#fyi').html('<p>Hover &amp; click on any bubble for more details.</p>')
+                    d3.select('#fyi').html('<p>Hover &amp; click on any bubble for more details (tap and double tap if you are using mobile divices).</p>')
                 }
                 else
                 {
