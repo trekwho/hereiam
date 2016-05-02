@@ -349,7 +349,7 @@
                         "font-weight":500
                     });
 
-                //to detect mobile and tablet devices, learned from http://stackoverflow.com/questions/11381673/detecting-a-mobile-browser.if are mobile devices, only add click event to assure its function, otherwise add mouse and click event. now it works on actual mobile devices, but not on webpage inspect's mock mode.
+                //to detect mobile and tablet devices, learned from http://stackoverflow.com/questions/11381673/detecting-a-mobile-browser. almost every orientational devices (including laptops with touch screen) is touchable and without mouse, so only add click event to assure its function, otherwise add mouse and click events. now it works on actual mobile devices, but not on webpage inspect's mock mode.
                 if(typeof window.orientation !== 'undefined'){
                     d3.selectAll("circle.bubble")
                         .on('click',clicked);
