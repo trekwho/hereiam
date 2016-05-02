@@ -138,7 +138,7 @@
                     .attr("x",padding.left)
                     .attr("y",height/5 + 30)
                     .text("Let's know more about them.")
-                    .style("fill","#fff");
+                    .style("fill","#e3e3e3");
 
                 //set scale for bar chart
                 var bar_y_scale = d3.scale.linear()
@@ -202,7 +202,7 @@
                       .attr('height',height/35)
                       .attr('x',0)
                       .attr('y',function(d,i){ return bar_y_scale(i); })
-                      .style('fill','#fff')
+                      .style('fill','#e3e3e3')
                       .attr('width',function(d){ return 0; })
                       .transition()
                       .duration(1000)
@@ -219,7 +219,7 @@
                       .attr({'x':function(d) {return (width - padding.left -padding.right)/4 - bar_x_left_scale(d["protein"]) - width/8; },
                              'y':function(d,i){ return bar_y_scale(i)+ 8; }})
                       .text(function(d){ return d["name"]+" "+Number(d["protein"]).toFixed(1)+"g";})
-                      .style({'fill':'#fff'});
+                      .style({'fill':'#e3e3e3'});
 
                 var right_text = svg.append('g')
                       .attr("transform", "translate("+(padding.left+(width - padding.left -padding.right)/4*3)+",0)")
@@ -266,7 +266,7 @@
                           .attr('height',height/35)
                           .attr('x',function(d){return (width - padding.left -padding.right)/12*5 - bar_x_left_scale(d["fat"]);})
                           .attr('y',function(d,i){ return bar_y_scale(i); })
-                          .style('fill','#fff')
+                          .style('fill','#e3e3e3')
                           .attr('width',function(d){ return 0; })
                           .transition()
                           .duration(1000)
@@ -310,7 +310,7 @@
                           .attr('x',function(d) {return bar_x_right_scale(d["protein"])-(width - padding.left -padding.right)/25; })
                           .attr('y',function(d,i){ return bar_y_scale(i) + 8; })
                           .text(function(d){ return Number(d["protein"]).toFixed(1)+"g";})
-                          .style({'fill':'#fff'});
+                          .style({'fill':'#e3e3e3'});
 
                 }
                 //start to draw the bubble chart

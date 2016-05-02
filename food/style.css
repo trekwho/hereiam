@@ -9,7 +9,7 @@ html, body {
     padding: 0px;
     height: 100%;
     width: 100%;
-    background-color: #e3e3e3;
+    background-color: #fdfaf6;
 }
 
 #vis{
@@ -57,7 +57,7 @@ html, body {
 }
 
 .axis{
-    fill: #e3e3e3;
+    fill: none;
     stroke: black;
     stroke-width: 1px;
     font-size: 10px;
