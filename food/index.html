@@ -118,7 +118,7 @@
                     .attr("width", width)
                     .attr("height", height);
                 
-                //first get rid of existed charts when redraw
+                //first get rid of existed charts' layers when redraw
                 svg.selectAll("g.bubble, g.left, g.right")
                     .transition().duration(500).ease("sin-in-out")
                     .style('opacity',0)
@@ -152,6 +152,7 @@
                 var bar_x_right_scale = d3.scale.linear()
                         .domain([0,50])
                         .range([(width - padding.left -padding.right)/60,(width - padding.left -padding.right)/4]);
+                
 
                 //sort and get top food lists for both protein and fat contents
                 collection.sort(function(a, b){return b["protein"]-a["protein"]});
@@ -250,6 +251,7 @@
                     bar_x_right_scale
                         .domain([0,30])
                         .range([(width - padding.left -padding.right)/20,(width - padding.left -padding.right)/5]);;
+                 
 
                     svg.append("text")
                         .attr("class","bar_title")
