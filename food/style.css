@@ -29,8 +29,21 @@ html, body {
     font-size: 18px;
 }
 
+.name{
+    font-size: 12px;
+}
+
 .bar_lable, .bar_title{
     font-size:12px;
+}
+
+.axis{
+    fill: none;
+    stroke: black;
+    stroke-width: 1px;
+    font-size: 10px;
+    opacity: 0.3;
+    font-family: Helvetica, Arial, sans-serif;
 }
 
 .notes{
@@ -54,15 +67,6 @@ html, body {
 #left_note p, #left_note h3, #right_note p{
     font-size: 14px;
     font-family: sans-serif;
-}
-
-.axis{
-    fill: none;
-    stroke: black;
-    stroke-width: 1px;
-    font-size: 10px;
-    opacity: 0.3;
-    font-family: Helvetica, Arial, sans-serif;
 }
 
 .tooltip {
@@ -93,7 +97,6 @@ button{
     width: 80%;
 }
 
-
 .bar_button{
     height: 40px;
     width: 100px;
@@ -114,6 +117,10 @@ button{
     }
 
     #subtitle{
+        font-size: 10px;
+    }
+
+    .name{
         font-size: 10px;
     }
 
@@ -151,6 +158,10 @@ button{
     }
 
     #subtitle{
+        font-size: 8px;
+    }
+
+    .name{
         font-size: 8px;
     }
 
