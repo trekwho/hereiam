@@ -138,7 +138,9 @@
                     .attr("x",padding.left)
                     .attr("y",height/5 + 30)
                     .text("Let's know more about them.")
-                    .style("fill","#e3e3e3");
+                    .style({"fill":"#e3e3e3",
+                            "stroke":"#000",
+                            "stroke-width":"0.3px"});
 
                 //set scale for bar chart
                 var bar_y_scale = d3.scale.linear()
@@ -343,8 +345,10 @@
                     .attr("text-anchor", "middle")
                     .text(function(d){ return d["name"]; })
                     .style({
-                        "fill":"#e3e3e3", 
-                        "font-family":"Helvetica Neue, Helvetica, Arial, sans-serif",
+                        "fill":"#fff",
+                        "stroke":"#000",
+                        "stroke-width":"0.1px", 
+                        "font-family":"Helvetica, Arial, sans-serif",
                         "font-weight":500
                     });
 
@@ -521,7 +525,9 @@
                         .attr("class","name")
                         .text(function(d){return d["name"];})
                         .style({
-                            "fill":"#e3e3e3", 
+                            "fill":"#fff",
+                            "stroke":"#000",
+                            "stroke-width":"0.1px", 
                             "font-family":"Helvetica, Arial, sans-serif",
                             "font-weight":300
                         })
