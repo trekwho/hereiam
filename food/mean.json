@@ -1,1183 +1,1192 @@
 [
     {
+        "category": "all of them",
+        "group": "X",
+        "name": "total",
         "energy": 194.14033798677443,
+        "protein": 10.554041146216019,
+        "fat": 9.780529022777369,
         "children": [
             {
-                "energy": 313.21693121693124,
-                "children": [
-                    {
-                        "energy": 338.37931034482756,
-                        "children": [],
-                        "category": "flour, grains and starches",
-                        "name": "flour",
-                        "protein": 9.734482758620688,
-                        "group": "AA",
-                        "fat": 2.617241379310345
-                    },
-                    {
-                        "energy": 221.16666666666666,
-                        "children": [],
-                        "category": "sandwiches",
-                        "name": "sandwiches",
-                        "protein": 10.066666666666668,
-                        "group": "AB",
-                        "fat": 9.450000000000001
-                    },
-                    {
-                        "energy": 237.41379310344828,
-                        "children": [],
-                        "category": "rice",
-                        "name": "rice",
-                        "protein": 5.313793103448275,
-                        "group": "AC",
-                        "fat": 1.5689655172413794
-                    },
-                    {
-                        "energy": 203.22222222222223,
-                        "children": [],
-                        "category": "pasta and noodles",
-                        "name": "pasta",
-                        "protein": 7.45185185185185,
-                        "group": "AD",
-                        "fat": 2.9111111111111114
-                    },
-                    {
-                        "energy": 248.83333333333334,
-                        "children": [],
-                        "category": "pizzas",
-                        "name": "pizzas",
-                        "protein": 12.0,
-                        "group": "AE",
-                        "fat": 7.733333333333333
-                    },
-                    {
-                        "energy": 273.13157894736844,
-                        "children": [],
-                        "category": "breads",
-                        "name": "breads",
-                        "protein": 8.794736842105262,
-                        "group": "AF",
-                        "fat": 6.192105263157896
-                    },
-                    {
-                        "energy": 270.6,
-                        "children": [],
-                        "category": "bread rolls",
-                        "name": "rolls",
-                        "protein": 9.559999999999999,
-                        "group": "AG",
-                        "fat": 6.5200000000000005
-                    },
-                    {
-                        "energy": 315.4375,
-                        "children": [],
-                        "category": "breakfast cereals and porridge",
-                        "name": "cereals",
-                        "protein": 7.565625000000001,
-                        "group": "AI",
-                        "fat": 3.65
-                    },
-                    {
-                        "energy": 396.0,
-                        "children": [],
-                        "category": "infant cereal foods",
-                        "name": "rusks",
-                        "protein": 6.5,
-                        "group": "AK",
-                        "fat": 10.7
-                    },
-                    {
-                        "energy": 446.0238095238095,
-                        "children": [],
-                        "category": "biscuits, breadsticks and oatcakes",
-                        "name": "biscuits",
-                        "protein": 6.745238095238095,
-                        "group": "AM",
-                        "fat": 19.254761904761907
-                    },
-                    {
-                        "energy": 375.0243902439024,
-                        "children": [],
-                        "category": "cakes and muffins",
-                        "name": "cakes",
-                        "protein": 5.134146341463414,
-                        "group": "AN",
-                        "fat": 16.54634146341463
-                    },
-                    {
-                        "energy": 421.26666666666665,
-                        "children": [],
-                        "category": "pastry",
-                        "name": "pastry",
-                        "protein": 7.140000000000001,
-                        "group": "AO",
-                        "fat": 24.979999999999997
-                    },
-                    {
-                        "energy": 341.2894736842105,
-                        "children": [],
-                        "category": "buns and pastries",
-                        "name": "buns",
-                        "protein": 6.3,
-                        "group": "AP",
-                        "fat": 15.649999999999999
-                    },
-                    {
-                        "energy": 265.9166666666667,
-                        "children": [],
-                        "category": "puddings",
-                        "name": "puddings",
-                        "protein": 3.90625,
-                        "group": "AS",
-                        "fat": 11.458333333333334
-                    },
-                    {
-                        "energy": 237.27777777777777,
-                        "children": [],
-                        "category": "savouries",
-                        "name": "savouries",
-                        "protein": 6.188888888888889,
-                        "group": "AT",
-                        "fat": 9.233333333333334
-                    }
-                ],
                 "category": "cereals and cereal product",
-                "name": "cereals",
-                "protein": 6.792328042328043,
                 "group": "A",
-                "fat": 10.294708994708996
-            },
-            {
-                "energy": 209.77297297297298,
+                "name": "cereals",
+                "energy": 313.21693121693124,
+                "protein": 6.792328042328043,
+                "fat": 10.294708994708996,
                 "children": [
                     {
-                        "energy": 104.875,
-                        "children": [
-                            {
-                                "energy": 72.33333333333333,
-                                "children": [],
-                                "category": "breakfast milk",
-                                "name": "breakfast milk",
-                                "protein": 3.5333333333333337,
-                                "group": "BAB",
-                                "fat": 4.7
-                            },
-                            {
-                                "energy": 32.75,
-                                "children": [],
-                                "category": "skimmed milk",
-                                "name": "skimmed milk",
-                                "protein": 3.475,
-                                "group": "BAE",
-                                "fat": 0.19999999999999998
-                            },
-                            {
-                                "energy": 46.25,
-                                "children": [],
-                                "category": "semi-skimmed milk",
-                                "name": "semi-skimmed milk",
-                                "protein": 3.425,
-                                "group": "BAH",
-                                "fat": 1.6749999999999998
-                            },
-                            {
-                                "energy": 63.5,
-                                "children": [],
-                                "category": "whole milk",
-                                "name": "whole milk",
-                                "protein": 3.325,
-                                "group": "BAK",
-                                "fat": 3.6750000000000003
-                            },
-                            {
-                                "energy": 211.125,
-                                "children": [],
-                                "category": "processed milks",
-                                "name": "processed milks",
-                                "protein": 9.0875,
-                                "group": "BAR",
-                                "fat": 7.675
-                            }
-                        ],
-                        "category": "cows milk",
-                        "name": "cows milk",
-                        "protein": 5.320833333333334,
-                        "group": "BA",
-                        "fat": 4.112500000000001
+                        "category": "flour, grains and starches",
+                        "group": "AA",
+                        "name": "flour",
+                        "energy": 338.37931034482756,
+                        "protein": 9.734482758620688,
+                        "fat": 2.617241379310345,
+                        "children": []
                     },
                     {
-                        "energy": 59.42857142857143,
-                        "children": [],
-                        "category": "other milks",
-                        "name": "other milks",
-                        "protein": 2.685714285714286,
-                        "group": "BC",
-                        "fat": 3.4142857142857146
+                        "category": "sandwiches",
+                        "group": "AB",
+                        "name": "sandwiches",
+                        "energy": 221.16666666666666,
+                        "protein": 10.066666666666668,
+                        "fat": 9.450000000000001,
+                        "children": []
                     },
                     {
-                        "energy": 105.3076923076923,
-                        "children": [],
-                        "category": "milk-based drinks",
-                        "name": "drinks",
-                        "protein": 5.2153846153846155,
-                        "group": "BH",
-                        "fat": 4.276923076923077
+                        "category": "rice",
+                        "group": "AC",
+                        "name": "rice",
+                        "energy": 237.41379310344828,
+                        "protein": 5.313793103448275,
+                        "fat": 1.5689655172413794,
+                        "children": []
                     },
                     {
-                        "energy": 294.25,
-                        "children": [
-                            {
-                                "energy": 322.5,
-                                "children": [],
-                                "category": "fresh creams (pasteurised)",
-                                "name": "fresh creams",
-                                "protein": 2.4125,
-                                "group": "BJC",
-                                "fat": 33.55
-                            },
-                            {
-                                "energy": 224.0,
-                                "children": [],
-                                "category": "UHT creams",
-                                "name": "UHT creams",
-                                "protein": 2.3499999999999996,
-                                "group": "BJP",
-                                "fat": 20.75
-                            },
-                            {
-                                "energy": 251.5,
-                                "children": [],
-                                "category": "imitation creams",
-                                "name": "imitation creams",
-                                "protein": 2.85,
-                                "group": "BJS",
-                                "fat": 25.1
-                            }
-                        ],
-                        "category": "creams",
-                        "name": "creams",
-                        "protein": 2.475,
-                        "group": "BJ",
-                        "fat": 30.00833333333333
+                        "category": "pasta and noodles",
+                        "group": "AD",
+                        "name": "pasta",
+                        "energy": 203.22222222222223,
+                        "protein": 7.45185185185185,
+                        "fat": 2.9111111111111114,
+                        "children": []
                     },
                     {
-                        "energy": 318.46666666666664,
-                        "children": [],
-                        "category": "cheeses",
-                        "name": "cheeses",
-                        "protein": 20.664444444444445,
-                        "group": "BL",
-                        "fat": 25.63333333333333
+                        "category": "pizzas",
+                        "group": "AE",
+                        "name": "pizzas",
+                        "energy": 248.83333333333334,
+                        "protein": 12.0,
+                        "fat": 7.733333333333333,
+                        "children": []
                     },
                     {
-                        "energy": 86.47368421052632,
-                        "children": [
-                            {
-                                "energy": 79.0,
-                                "children": [],
-                                "category": "whole milk yogurts",
-                                "name": "whole milk yogurts",
-                                "protein": 5.7,
-                                "group": "BNE",
-                                "fat": 3.0
-                            },
-                            {
-                                "energy": 91.0,
-                                "children": [],
-                                "category": "low fat yogurts",
-                                "name": "low fat yogurts",
-                                "protein": 4.1,
-                                "group": "BNH",
-                                "fat": 1.2
-                            },
-                            {
-                                "energy": 99.0,
-                                "children": [],
-                                "category": "other yogurts",
-                                "name": "other yogurts",
-                                "protein": 5.8,
-                                "group": "BNS",
-                                "fat": 2.9
-                            }
-                        ],
-                        "category": "yogurts",
-                        "name": "yogurts",
-                        "protein": 4.7,
-                        "group": "BN",
-                        "fat": 2.8210526315789473
+                        "category": "breads",
+                        "group": "AF",
+                        "name": "breads",
+                        "energy": 273.13157894736844,
+                        "protein": 8.794736842105262,
+                        "fat": 6.192105263157896,
+                        "children": []
                     },
                     {
-                        "energy": 212.05555555555554,
-                        "children": [],
-                        "category": "ice cream",
-                        "name": "ice cream",
-                        "protein": 2.816666666666667,
-                        "group": "BP",
-                        "fat": 11.711111111111112
+                        "category": "bread rolls",
+                        "group": "AG",
+                        "name": "rolls",
+                        "energy": 270.6,
+                        "protein": 9.559999999999999,
+                        "fat": 6.5200000000000005,
+                        "children": []
                     },
                     {
-                        "energy": 175.77142857142857,
-                        "children": [],
-                        "category": "puddings and chilled desserts",
+                        "category": "breakfast cereals and porridge",
+                        "group": "AI",
+                        "name": "cereals",
+                        "energy": 315.4375,
+                        "protein": 7.565625000000001,
+                        "fat": 3.65,
+                        "children": []
+                    },
+                    {
+                        "category": "infant cereal foods",
+                        "group": "AK",
+                        "name": "rusks",
+                        "energy": 396.0,
+                        "protein": 6.5,
+                        "fat": 10.7,
+                        "children": []
+                    },
+                    {
+                        "category": "biscuits, breadsticks and oatcakes",
+                        "group": "AM",
+                        "name": "biscuits",
+                        "energy": 446.0238095238095,
+                        "protein": 6.745238095238095,
+                        "fat": 19.254761904761907,
+                        "children": []
+                    },
+                    {
+                        "category": "cakes and muffins",
+                        "group": "AN",
+                        "name": "cakes",
+                        "energy": 375.0243902439024,
+                        "protein": 5.134146341463414,
+                        "fat": 16.54634146341463,
+                        "children": []
+                    },
+                    {
+                        "category": "pastry",
+                        "group": "AO",
+                        "name": "pastry",
+                        "energy": 421.26666666666665,
+                        "protein": 7.140000000000001,
+                        "fat": 24.979999999999997,
+                        "children": []
+                    },
+                    {
+                        "category": "buns and pastries",
+                        "group": "AP",
+                        "name": "buns",
+                        "energy": 341.2894736842105,
+                        "protein": 6.3,
+                        "fat": 15.649999999999999,
+                        "children": []
+                    },
+                    {
+                        "category": "puddings",
+                        "group": "AS",
                         "name": "puddings",
-                        "protein": 3.9799999999999995,
-                        "group": "BR",
-                        "fat": 8.402857142857142
+                        "energy": 265.9166666666667,
+                        "protein": 3.90625,
+                        "fat": 11.458333333333334,
+                        "children": []
                     },
                     {
-                        "energy": 279.3333333333333,
-                        "children": [],
-                        "category": "savoury dishes and sauces",
-                        "name": "sauces",
-                        "protein": 11.083333333333334,
-                        "group": "BV",
-                        "fat": 17.883333333333336
+                        "category": "savouries",
+                        "group": "AT",
+                        "name": "savouries",
+                        "energy": 237.27777777777777,
+                        "protein": 6.188888888888889,
+                        "fat": 9.233333333333334,
+                        "children": []
                     }
-                ],
+                ]
+            },
+            {
                 "category": "milk and milk product",
-                "name": "milk",
-                "protein": 8.221621621621622,
                 "group": "B",
-                "fat": 14.748108108108111
-            },
-            {
-                "energy": 250.33333333333334,
+                "name": "milk",
+                "energy": 209.77297297297298,
+                "protein": 8.221621621621622,
+                "fat": 14.748108108108111,
                 "children": [
                     {
-                        "energy": 217.92307692307693,
-                        "children": [],
-                        "category": "eggs",
-                        "name": "eggs",
-                        "protein": 17.115384615384617,
-                        "group": "CA",
-                        "fat": 16.607692307692307
-                    },
-                    {
-                        "energy": 275.11764705882354,
+                        "category": "cows milk",
+                        "group": "BA",
+                        "name": "cows milk",
+                        "energy": 104.875,
+                        "protein": 5.320833333333334,
+                        "fat": 4.112500000000001,
                         "children": [
                             {
-                                "energy": 299.5,
-                                "children": [],
-                                "category": "savoury egg dishes",
-                                "name": "savoury eggs",
-                                "protein": 9.3,
-                                "group": "CDE",
-                                "fat": 27.65
+                                "category": "breakfast milk",
+                                "group": "BAB",
+                                "name": "breakfast milk",
+                                "energy": 72.33333333333333,
+                                "protein": 3.5333333333333337,
+                                "fat": 4.7,
+                                "children": []
                             },
                             {
-                                "energy": 442.0,
-                                "children": [],
-                                "category": "sweet egg dishes",
-                                "name": "sweet eggs",
-                                "protein": 9.9,
-                                "group": "CDH",
-                                "fat": 17.8
+                                "category": "skimmed milk",
+                                "group": "BAE",
+                                "name": "skimmed milk",
+                                "energy": 32.75,
+                                "protein": 3.475,
+                                "fat": 0.19999999999999998,
+                                "children": []
+                            },
+                            {
+                                "category": "semi-skimmed milk",
+                                "group": "BAH",
+                                "name": "semi-skimmed milk",
+                                "energy": 46.25,
+                                "protein": 3.425,
+                                "fat": 1.6749999999999998,
+                                "children": []
+                            },
+                            {
+                                "category": "whole milk",
+                                "group": "BAK",
+                                "name": "whole milk",
+                                "energy": 63.5,
+                                "protein": 3.325,
+                                "fat": 3.6750000000000003,
+                                "children": []
+                            },
+                            {
+                                "category": "processed milks",
+                                "group": "BAR",
+                                "name": "processed milks",
+                                "energy": 211.125,
+                                "protein": 9.0875,
+                                "fat": 7.675,
+                                "children": []
                             }
-                        ],
-                        "category": "egg dishes",
-                        "name": "egg dishes",
-                        "protein": 10.905882352941177,
-                        "group": "CD",
-                        "fat": 19.923529411764704
+                        ]
+                    },
+                    {
+                        "category": "other milks",
+                        "group": "BC",
+                        "name": "other milks",
+                        "energy": 59.42857142857143,
+                        "protein": 2.685714285714286,
+                        "fat": 3.4142857142857146,
+                        "children": []
+                    },
+                    {
+                        "category": "milk-based drinks",
+                        "group": "BH",
+                        "name": "drinks",
+                        "energy": 105.3076923076923,
+                        "protein": 5.2153846153846155,
+                        "fat": 4.276923076923077,
+                        "children": []
+                    },
+                    {
+                        "category": "creams",
+                        "group": "BJ",
+                        "name": "creams",
+                        "energy": 294.25,
+                        "protein": 2.475,
+                        "fat": 30.00833333333333,
+                        "children": [
+                            {
+                                "category": "fresh creams (pasteurised)",
+                                "group": "BJC",
+                                "name": "fresh creams",
+                                "energy": 322.5,
+                                "protein": 2.4125,
+                                "fat": 33.55,
+                                "children": []
+                            },
+                            {
+                                "category": "UHT creams",
+                                "group": "BJP",
+                                "name": "UHT creams",
+                                "energy": 224.0,
+                                "protein": 2.3499999999999996,
+                                "fat": 20.75,
+                                "children": []
+                            },
+                            {
+                                "category": "imitation creams",
+                                "group": "BJS",
+                                "name": "imitation creams",
+                                "energy": 251.5,
+                                "protein": 2.85,
+                                "fat": 25.1,
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "category": "cheeses",
+                        "group": "BL",
+                        "name": "cheeses",
+                        "energy": 318.46666666666664,
+                        "protein": 20.664444444444445,
+                        "fat": 25.63333333333333,
+                        "children": []
+                    },
+                    {
+                        "category": "yogurts",
+                        "group": "BN",
+                        "name": "yogurts",
+                        "energy": 86.47368421052632,
+                        "protein": 4.7,
+                        "fat": 2.8210526315789473,
+                        "children": [
+                            {
+                                "category": "whole milk yogurts",
+                                "group": "BNE",
+                                "name": "whole milk yogurts",
+                                "energy": 79.0,
+                                "protein": 5.7,
+                                "fat": 3.0,
+                                "children": []
+                            },
+                            {
+                                "category": "low fat yogurts",
+                                "group": "BNH",
+                                "name": "low fat yogurts",
+                                "energy": 91.0,
+                                "protein": 4.1,
+                                "fat": 1.2,
+                                "children": []
+                            },
+                            {
+                                "category": "other yogurts",
+                                "group": "BNS",
+                                "name": "other yogurts",
+                                "energy": 99.0,
+                                "protein": 5.8,
+                                "fat": 2.9,
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "category": "ice cream",
+                        "group": "BP",
+                        "name": "ice cream",
+                        "energy": 212.05555555555554,
+                        "protein": 2.816666666666667,
+                        "fat": 11.711111111111112,
+                        "children": []
+                    },
+                    {
+                        "category": "puddings and chilled desserts",
+                        "group": "BR",
+                        "name": "puddings",
+                        "energy": 175.77142857142857,
+                        "protein": 3.9799999999999995,
+                        "fat": 8.402857142857142,
+                        "children": []
+                    },
+                    {
+                        "category": "fat spread",
+                        "group": "BTM",
+                        "name": "fat",
+                        "energy": 559.3333333333334,
+                        "protein": 0.2166666666666667,
+                        "fat": 61.800000000000004,
+                        "children": []
+                    },
+                    {
+                        "category": "savoury dishes and sauces",
+                        "group": "BV",
+                        "name": "sauces",
+                        "energy": 279.3333333333333,
+                        "protein": 11.083333333333334,
+                        "fat": 17.883333333333336,
+                        "children": []
                     }
-                ],
+                ]
+            },
+            {
                 "category": "eggs",
-                "name": "eggs",
-                "protein": 13.596666666666666,
                 "group": "C",
-                "fat": 18.486666666666665
-            },
-            {
-                "energy": 121.66259541984734,
+                "name": "eggs",
+                "energy": 250.33333333333334,
+                "protein": 13.596666666666666,
+                "fat": 18.486666666666665,
                 "children": [
                     {
-                        "energy": 174.25531914893617,
+                        "category": "eggs",
+                        "group": "CA",
+                        "name": "eggs",
+                        "energy": 217.92307692307693,
+                        "protein": 17.115384615384617,
+                        "fat": 16.607692307692307,
+                        "children": []
+                    },
+                    {
+                        "category": "egg dishes",
+                        "group": "CD",
+                        "name": "egg dishes",
+                        "energy": 275.11764705882354,
+                        "protein": 10.905882352941177,
+                        "fat": 19.923529411764704,
                         "children": [
                             {
-                                "energy": 90.25,
-                                "children": [],
-                                "category": "early potatoes",
-                                "name": "early potatoes",
-                                "protein": 1.95,
-                                "group": "DAE",
-                                "fat": 1.7249999999999999
+                                "category": "savoury egg dishes",
+                                "group": "CDE",
+                                "name": "savoury eggs",
+                                "energy": 299.5,
+                                "protein": 9.3,
+                                "fat": 27.65,
+                                "children": []
                             },
                             {
-                                "energy": 108.28571428571429,
-                                "children": [],
-                                "category": "main crop potatoes",
-                                "name": "main crop potatoes",
-                                "protein": 2.257142857142857,
-                                "group": "DAM",
-                                "fat": 2.3
-                            },
-                            {
-                                "energy": 255.52941176470588,
-                                "children": [],
-                                "category": "chipped old potatoes",
-                                "name": "chipped old potatoes",
-                                "protein": 3.729411764705883,
-                                "group": "DAP",
-                                "fat": 11.841176470588234
-                            },
-                            {
-                                "energy": 161.8,
-                                "children": [],
-                                "category": "potato products",
-                                "name": "potato products",
-                                "protein": 3.4099999999999993,
-                                "group": "DAR",
-                                "fat": 4.63
+                                "category": "sweet egg dishes",
+                                "group": "CDH",
+                                "name": "sweet eggs",
+                                "energy": 442.0,
+                                "protein": 9.9,
+                                "fat": 17.8,
+                                "children": []
                             }
-                        ],
-                        "category": "potatoes",
-                        "name": "potatoes",
-                        "protein": 3.021276595744682,
-                        "group": "DA",
-                        "fat": 6.397872340425534
-                    },
-                    {
-                        "energy": 153.8095238095238,
-                        "children": [],
-                        "category": "beans and lentils",
-                        "name": "beans",
-                        "protein": 11.963492063492062,
-                        "group": "DB",
-                        "fat": 2.380952380952381
-                    },
-                    {
-                        "energy": 101.6875,
-                        "children": [],
-                        "category": "peas",
-                        "name": "peas",
-                        "protein": 7.5625,
-                        "group": "DF",
-                        "fat": 1.2249999999999999
-                    },
-                    {
-                        "energy": 54.86976744186047,
-                        "children": [],
-                        "category": "vegetables, general",
-                        "name": "vegetables",
-                        "protein": 2.181395348837209,
-                        "group": "DG",
-                        "fat": 1.5130232558139538
-                    },
-                    {
-                        "energy": 223.2,
-                        "children": [],
-                        "category": "vegetables, dried",
-                        "name": "dry vegetables",
-                        "protein": 21.34,
-                        "group": "DI",
-                        "fat": 6.0200000000000005
-                    },
-                    {
-                        "energy": 153.16233766233765,
-                        "children": [],
-                        "category": "vegetable dishes",
-                        "name": "vegetable dishes",
-                        "protein": 4.8042207792207785,
-                        "group": "DR",
-                        "fat": 9.14090909090909
+                        ]
                     }
-                ],
+                ]
+            },
+            {
                 "category": "vegetables",
-                "name": "vegetables",
-                "protein": 4.692061068702291,
                 "group": "D",
-                "fat": 5.567022900763359
-            },
-            {
-                "energy": 67.38829787234043,
+                "name": "vegetables",
+                "energy": 121.66259541984734,
+                "protein": 4.692061068702291,
+                "fat": 5.567022900763359,
                 "children": [
                     {
-                        "energy": 68.98314606741573,
-                        "children": [],
-                        "category": "fruit, general",
-                        "name": "fruit",
-                        "protein": 1.0370786516853934,
-                        "group": "FA",
-                        "fat": 0.9292134831460674
+                        "category": "potatoes",
+                        "group": "DA",
+                        "name": "potatoes",
+                        "energy": 174.25531914893617,
+                        "protein": 3.021276595744682,
+                        "fat": 6.397872340425534,
+                        "children": [
+                            {
+                                "category": "early potatoes",
+                                "group": "DAE",
+                                "name": "early potatoes",
+                                "energy": 90.25,
+                                "protein": 1.95,
+                                "fat": 1.7249999999999999,
+                                "children": []
+                            },
+                            {
+                                "category": "main crop potatoes",
+                                "group": "DAM",
+                                "name": "main crop potatoes",
+                                "energy": 108.28571428571429,
+                                "protein": 2.257142857142857,
+                                "fat": 2.3,
+                                "children": []
+                            },
+                            {
+                                "category": "chipped old potatoes",
+                                "group": "DAP",
+                                "name": "chipped old potatoes",
+                                "energy": 255.52941176470588,
+                                "protein": 3.729411764705883,
+                                "fat": 11.841176470588234,
+                                "children": []
+                            },
+                            {
+                                "category": "potato products",
+                                "group": "DAR",
+                                "name": "potato products",
+                                "energy": 161.8,
+                                "protein": 3.4099999999999993,
+                                "fat": 4.63,
+                                "children": []
+                            }
+                        ]
                     },
                     {
-                        "energy": 37.666666666666664,
-                        "children": [],
-                        "category": "fruit juices",
-                        "name": "juices",
-                        "protein": 0.5666666666666668,
-                        "group": "FC",
-                        "fat": 0.10000000000000002
+                        "category": "beans and lentils",
+                        "group": "DB",
+                        "name": "beans",
+                        "energy": 153.8095238095238,
+                        "protein": 11.963492063492062,
+                        "fat": 2.380952380952381,
+                        "children": []
+                    },
+                    {
+                        "category": "peas",
+                        "group": "DF",
+                        "name": "peas",
+                        "energy": 101.6875,
+                        "protein": 7.5625,
+                        "fat": 1.2249999999999999,
+                        "children": []
+                    },
+                    {
+                        "category": "vegetables, general",
+                        "group": "DG",
+                        "name": "vegetables",
+                        "energy": 54.86976744186047,
+                        "protein": 2.181395348837209,
+                        "fat": 1.5130232558139538,
+                        "children": []
+                    },
+                    {
+                        "category": "vegetables, dried",
+                        "group": "DI",
+                        "name": "dry vegetables",
+                        "energy": 223.2,
+                        "protein": 21.34,
+                        "fat": 6.0200000000000005,
+                        "children": []
+                    },
+                    {
+                        "category": "vegetable dishes",
+                        "group": "DR",
+                        "name": "vegetable dishes",
+                        "energy": 153.16233766233765,
+                        "protein": 4.8042207792207785,
+                        "fat": 9.14090909090909,
+                        "children": []
                     }
-                ],
+                ]
+            },
+            {
                 "category": "fruit",
-                "name": "fruit",
-                "protein": 1.0015957446808512,
                 "group": "F",
-                "fat": 0.8872340425531916
-            },
-            {
-                "energy": 463.5625,
+                "name": "fruit",
+                "energy": 67.38829787234043,
+                "protein": 1.0015957446808512,
+                "fat": 0.8872340425531916,
                 "children": [
                     {
-                        "energy": 459.4782608695652,
-                        "children": [],
-                        "category": "nuts and seeds, general",
-                        "name": "nuts, general",
-                        "protein": 12.767391304347825,
-                        "group": "GA",
-                        "fat": 38.22608695652175
-                    }
-                ],
-                "category": "nuts and seeds",
-                "name": "nuts",
-                "protein": 12.579166666666666,
-                "group": "G",
-                "fat": 38.28541666666667
-            },
-            {
-                "energy": 193.34285714285716,
-                "children": [],
-                "category": "herbs and spices",
-                "name": "herbs",
-                "protein": 9.802857142857144,
-                "group": "H",
-                "fat": 5.274285714285714
-            },
-            {
-                "energy": 146.0561403508772,
-                "children": [
-                    {
-                        "energy": 127.3907284768212,
-                        "children": [],
-                        "category": "white fish, such as bass and cod",
-                        "name": "white fish",
-                        "protein": 19.05894039735099,
-                        "group": "JA",
-                        "fat": 4.663576158940398
+                        "category": "fruit, general",
+                        "group": "FA",
+                        "name": "fruit",
+                        "energy": 68.98314606741573,
+                        "protein": 1.0370786516853934,
+                        "fat": 0.9292134831460674,
+                        "children": []
                     },
                     {
-                        "energy": 187.16981132075472,
-                        "children": [],
-                        "category": "fatty fish, such as salmon and trout",
-                        "name": "fatty fish",
-                        "protein": 21.133962264150945,
-                        "group": "JC",
-                        "fat": 11.235849056603774
-                    },
-                    {
-                        "energy": 115.95454545454545,
-                        "children": [],
-                        "category": "crustacea, such as crab and prawns",
-                        "name": "crustacea",
-                        "protein": 20.950000000000003,
-                        "group": "JK",
-                        "fat": 2.722727272727272
-                    },
-                    {
-                        "energy": 96.625,
-                        "children": [],
-                        "category": "molluscs, such as calamari and mussels",
-                        "name": "molluscs",
-                        "protein": 15.7875,
-                        "group": "JM",
-                        "fat": 2.46875
-                    },
-                    {
-                        "energy": 192.0857142857143,
-                        "children": [],
-                        "category": "fish products and dishes",
-                        "name": "fish dishes",
-                        "protein": 11.579999999999998,
-                        "group": "JR",
-                        "fat": 11.459999999999999
-                    }
-                ],
-                "category": "fish and fish products",
-                "name": "fish",
-                "protein": 18.47122807017544,
-                "group": "J",
-                "fat": 6.707719298245613
-            },
-            {
-                "energy": 210.55322338830584,
-                "children": [
-                    {
-                        "energy": 232.97770700636943,
-                        "children": [
-                            {
-                                "energy": 286.44,
-                                "children": [],
-                                "category": "bacon",
-                                "name": "bacon",
-                                "protein": 22.048000000000002,
-                                "group": "MAA",
-                                "fat": 21.951999999999998
-                            },
-                            {
-                                "energy": 213.54945054945054,
-                                "children": [],
-                                "category": "beef",
-                                "name": "beef",
-                                "protein": 26.721978021978025,
-                                "group": "MAC",
-                                "fat": 11.835164835164836
-                            },
-                            {
-                                "energy": 251.3047619047619,
-                                "children": [],
-                                "category": "lamb",
-                                "name": "lamb",
-                                "protein": 22.96857142857143,
-                                "group": "MAE",
-                                "fat": 17.66952380952381
-                            },
-                            {
-                                "energy": 220.04545454545453,
-                                "children": [],
-                                "category": "pork",
-                                "name": "pork",
-                                "protein": 25.2875,
-                                "group": "MAG",
-                                "fat": 13.155681818181819
-                            },
-                            {
-                                "energy": 162.75,
-                                "children": [],
-                                "category": "veal",
-                                "name": "veal",
-                                "protein": 25.75,
-                                "group": "MAI",
-                                "fat": 6.65
-                            }
-                        ],
-                        "category": "meat",
-                        "name": "meat",
-                        "protein": 24.63917197452229,
-                        "group": "MA",
-                        "fat": 14.879299363057326
-                    },
-                    {
-                        "energy": 194.3235294117647,
-                        "children": [
-                            {
-                                "energy": 197.109375,
-                                "children": [],
-                                "category": "chicken",
-                                "name": "chicken",
-                                "protein": 20.734375,
-                                "group": "MCA",
-                                "fat": 12.1765625
-                            },
-                            {
-                                "energy": 221.85714285714286,
-                                "children": [],
-                                "category": "duck",
-                                "name": "duck",
-                                "protein": 16.685714285714283,
-                                "group": "MCC",
-                                "fat": 17.214285714285715
-                            },
-                            {
-                                "energy": 331.0,
-                                "children": [],
-                                "category": "goose",
-                                "name": "goose",
-                                "protein": 22.0,
-                                "group": "MCE",
-                                "fat": 27.0
-                            },
-                            {
-                                "energy": 93.5,
-                                "children": [],
-                                "category": "grouse",
-                                "name": "grouse",
-                                "protein": 20.15,
-                                "group": "MCG",
-                                "fat": 1.45
-                            },
-                            {
-                                "energy": 169.5,
-                                "children": [],
-                                "category": "partridge",
-                                "name": "partridge",
-                                "protein": 29.35,
-                                "group": "MCI",
-                                "fat": 5.75
-                            },
-                            {
-                                "energy": 167.0,
-                                "children": [],
-                                "category": "pheasant",
-                                "name": "pheasant",
-                                "protein": 21.2,
-                                "group": "MCK",
-                                "fat": 9.1
-                            },
-                            {
-                                "energy": 137.5,
-                                "children": [],
-                                "category": "pigeon",
-                                "name": "pigeon",
-                                "protein": 21.3,
-                                "group": "MCM",
-                                "fat": 5.800000000000001
-                            },
-                            {
-                                "energy": 183.61904761904762,
-                                "children": [],
-                                "category": "turkey",
-                                "name": "turkey",
-                                "protein": 25.90952380952381,
-                                "group": "MCO",
-                                "fat": 8.885714285714286
-                            }
-                        ],
-                        "category": "poultry",
-                        "name": "poultry",
-                        "protein": 21.72450980392157,
-                        "group": "MC",
-                        "fat": 11.61372549019608
-                    },
-                    {
-                        "energy": 131.14285714285714,
-                        "children": [
-                            {
-                                "energy": 165.5,
-                                "children": [],
-                                "category": "hare",
-                                "name": "hare",
-                                "protein": 25.85,
-                                "group": "MEA",
-                                "fat": 6.9
-                            },
-                            {
-                                "energy": 106.33333333333333,
-                                "children": [],
-                                "category": "rabbit",
-                                "name": "rabbit",
-                                "protein": 18.599999999999998,
-                                "group": "MEC",
-                                "fat": 3.533333333333333
-                            },
-                            {
-                                "energy": 134.0,
-                                "children": [],
-                                "category": "venison",
-                                "name": "venison",
-                                "protein": 28.9,
-                                "group": "MEE",
-                                "fat": 2.05
-                            }
-                        ],
-                        "category": "game",
-                        "name": "game",
-                        "protein": 23.61428571428571,
-                        "group": "ME",
-                        "fat": 4.071428571428571
-                    },
-                    {
-                        "energy": 162.775,
-                        "children": [],
-                        "category": "offal",
-                        "name": "offal",
-                        "protein": 20.5325,
-                        "group": "MG",
-                        "fat": 8.877500000000001
-                    },
-                    {
-                        "energy": 258.8181818181818,
-                        "children": [],
-                        "category": "burgers and grillsteaks",
-                        "name": "burgers",
-                        "protein": 16.881818181818183,
-                        "group": "MBG",
-                        "fat": 15.272727272727273
-                    },
-                    {
-                        "energy": 268.93023255813955,
-                        "children": [
-                            {
-                                "energy": 156.0,
-                                "children": [],
-                                "category": "curry, chicken tikka masala",
-                                "name": "other meat products",
-                                "protein": 12.4,
-                                "group": "MIG",
-                                "fat": 9.8
-                            }
-                        ],
-                        "category": "meat products, such as sausages",
-                        "name": "meat products",
-                        "protein": 14.453488372093023,
-                        "group": "MI",
-                        "fat": 18.83720930232558
-                    },
-                    {
-                        "energy": 170.82,
-                        "children": [],
-                        "category": "meat dishes",
-                        "name": "meat dishes",
-                        "protein": 12.693999999999999,
-                        "group": "MR",
-                        "fat": 9.666666666666666
-                    }
-                ],
-                "category": "meat and meat products",
-                "name": "meat",
-                "protein": 20.46551724137931,
-                "group": "M",
-                "fat": 12.995952023988005
-            },
-            {
-                "energy": 751.1111111111111,
-                "children": [
-                    {
-                        "energy": 674.0,
-                        "children": [],
-                        "category": "butter and spreading fats",
-                        "name": "spreading fats",
-                        "protein": 0.5,
-                        "group": "OA",
-                        "fat": 74.44
-                    },
-                    {
-                        "energy": 896.0,
-                        "children": [],
-                        "category": "butteroil, unsalted",
-                        "name": "animal fats",
-                        "protein": 0.6,
-                        "group": "OB",
-                        "fat": 99.3
-                    },
-                    {
-                        "energy": 898.0,
-                        "children": [],
-                        "category": "oils",
-                        "name": "oils",
-                        "protein": 0.2,
-                        "group": "OC",
-                        "fat": 99.7
-                    },
-                    {
-                        "energy": 798.0,
-                        "children": [],
-                        "category": "cooking fats",
-                        "name": "cooking fats",
-                        "protein": 1.3,
-                        "group": "OF",
-                        "fat": 81.65
-                    }
-                ],
-                "category": "fats and oils",
-                "name": "fats",
-                "protein": 0.6555555555555556,
-                "group": "O",
-                "fat": 81.61111111111113
-            },
-            {
-                "energy": 151.82051282051282,
-                "children": [
-                    {
-                        "energy": 176.58620689655172,
-                        "children": [
-                            {
-                                "energy": 246.85,
-                                "children": [],
-                                "category": "powered drinks and essences",
-                                "name": "powered drinks",
-                                "protein": 7.700000000000003,
-                                "group": "PAA",
-                                "fat": 4.790000000000001
-                            },
-                            {
-                                "energy": 20.444444444444443,
-                                "children": [],
-                                "category": "coffee and tea",
-                                "name": "infusions",
-                                "protein": 0.4444444444444444,
-                                "group": "PAC",
-                                "fat": 1.3111111111111111
-                            }
-                        ],
-                        "category": "powdered drinks, essences and infusions",
-                        "name": "powdered drinks",
-                        "protein": 5.448275862068965,
-                        "group": "PA",
-                        "fat": 3.710344827586207
-                    },
-                    {
-                        "energy": 91.25,
-                        "children": [
-                            {
-                                "energy": 22.0,
-                                "children": [],
-                                "category": "carbonated drinks",
-                                "name": "carbonated drinks",
-                                "protein": 0.0,
-                                "group": "PCA",
-                                "fat": 0.0
-                            },
-                            {
-                                "energy": 114.33333333333333,
-                                "children": [],
-                                "category": "squash and cordials",
-                                "name": "squash and cordials",
-                                "protein": 0.06666666666666667,
-                                "group": "PCC",
-                                "fat": 0.0
-                            }
-                        ],
-                        "category": "soft drinks",
-                        "name": "soft drinks",
-                        "protein": 0.05,
-                        "group": "PC",
-                        "fat": 0.0
-                    },
-                    {
-                        "energy": 81.6,
-                        "children": [],
-                        "category": "juices",
+                        "category": "fruit juices",
+                        "group": "FC",
                         "name": "juices",
-                        "protein": 0.4,
-                        "group": "PE",
-                        "fat": 0.19999999999999998
+                        "energy": 37.666666666666664,
+                        "protein": 0.5666666666666668,
+                        "fat": 0.10000000000000002,
+                        "children": []
                     }
-                ],
+                ]
+            },
+            {
+                "category": "nuts and seeds",
+                "group": "G",
+                "name": "nuts",
+                "energy": 463.5625,
+                "protein": 12.579166666666666,
+                "fat": 38.28541666666667,
+                "children": [
+                    {
+                        "category": "nuts and seeds, general",
+                        "group": "GA",
+                        "name": "nuts, general",
+                        "energy": 459.4782608695652,
+                        "protein": 12.767391304347825,
+                        "fat": 38.22608695652175,
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "category": "herbs and spices",
+                "group": "H",
+                "name": "herbs",
+                "energy": 193.34285714285716,
+                "protein": 9.802857142857144,
+                "fat": 5.274285714285714,
+                "children": []
+            },
+            {
+                "category": "fish and fish products",
+                "group": "J",
+                "name": "fish",
+                "energy": 146.0561403508772,
+                "protein": 18.47122807017544,
+                "fat": 6.707719298245613,
+                "children": [
+                    {
+                        "category": "white fish, such as bass and cod",
+                        "group": "JA",
+                        "name": "white fish",
+                        "energy": 127.3907284768212,
+                        "protein": 19.05894039735099,
+                        "fat": 4.663576158940398,
+                        "children": []
+                    },
+                    {
+                        "category": "fatty fish, such as salmon and trout",
+                        "group": "JC",
+                        "name": "fatty fish",
+                        "energy": 187.16981132075472,
+                        "protein": 21.133962264150945,
+                        "fat": 11.235849056603774,
+                        "children": []
+                    },
+                    {
+                        "category": "crustacea, such as crab and prawns",
+                        "group": "JK",
+                        "name": "crustacea",
+                        "energy": 115.95454545454545,
+                        "protein": 20.950000000000003,
+                        "fat": 2.722727272727272,
+                        "children": []
+                    },
+                    {
+                        "category": "molluscs, such as calamari and mussels",
+                        "group": "JM",
+                        "name": "molluscs",
+                        "energy": 96.625,
+                        "protein": 15.7875,
+                        "fat": 2.46875,
+                        "children": []
+                    },
+                    {
+                        "category": "fish products and dishes",
+                        "group": "JR",
+                        "name": "fish dishes",
+                        "energy": 192.0857142857143,
+                        "protein": 11.579999999999998,
+                        "fat": 11.459999999999999,
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "category": "meat and meat products",
+                "group": "M",
+                "name": "meat",
+                "energy": 210.55322338830584,
+                "protein": 20.46551724137931,
+                "fat": 12.995952023988005,
+                "children": [
+                    {
+                        "category": "meat",
+                        "group": "MA",
+                        "name": "meat",
+                        "energy": 232.97770700636943,
+                        "protein": 24.63917197452229,
+                        "fat": 14.879299363057326,
+                        "children": [
+                            {
+                                "category": "bacon",
+                                "group": "MAA",
+                                "name": "bacon",
+                                "energy": 286.44,
+                                "protein": 22.048000000000002,
+                                "fat": 21.951999999999998,
+                                "children": []
+                            },
+                            {
+                                "category": "beef",
+                                "group": "MAC",
+                                "name": "beef",
+                                "energy": 213.54945054945054,
+                                "protein": 26.721978021978025,
+                                "fat": 11.835164835164836,
+                                "children": []
+                            },
+                            {
+                                "category": "lamb",
+                                "group": "MAE",
+                                "name": "lamb",
+                                "energy": 251.3047619047619,
+                                "protein": 22.96857142857143,
+                                "fat": 17.66952380952381,
+                                "children": []
+                            },
+                            {
+                                "category": "pork",
+                                "group": "MAG",
+                                "name": "pork",
+                                "energy": 220.04545454545453,
+                                "protein": 25.2875,
+                                "fat": 13.155681818181819,
+                                "children": []
+                            },
+                            {
+                                "category": "veal",
+                                "group": "MAI",
+                                "name": "veal",
+                                "energy": 162.75,
+                                "protein": 25.75,
+                                "fat": 6.65,
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "category": "poultry",
+                        "group": "MC",
+                        "name": "poultry",
+                        "energy": 194.3235294117647,
+                        "protein": 21.72450980392157,
+                        "fat": 11.61372549019608,
+                        "children": [
+                            {
+                                "category": "chicken",
+                                "group": "MCA",
+                                "name": "chicken",
+                                "energy": 197.109375,
+                                "protein": 20.734375,
+                                "fat": 12.1765625,
+                                "children": []
+                            },
+                            {
+                                "category": "duck",
+                                "group": "MCC",
+                                "name": "duck",
+                                "energy": 221.85714285714286,
+                                "protein": 16.685714285714283,
+                                "fat": 17.214285714285715,
+                                "children": []
+                            },
+                            {
+                                "category": "goose",
+                                "group": "MCE",
+                                "name": "goose",
+                                "energy": 331.0,
+                                "protein": 22.0,
+                                "fat": 27.0,
+                                "children": []
+                            },
+                            {
+                                "category": "grouse",
+                                "group": "MCG",
+                                "name": "grouse",
+                                "energy": 93.5,
+                                "protein": 20.15,
+                                "fat": 1.45,
+                                "children": []
+                            },
+                            {
+                                "category": "partridge",
+                                "group": "MCI",
+                                "name": "partridge",
+                                "energy": 169.5,
+                                "protein": 29.35,
+                                "fat": 5.75,
+                                "children": []
+                            },
+                            {
+                                "category": "pheasant",
+                                "group": "MCK",
+                                "name": "pheasant",
+                                "energy": 167.0,
+                                "protein": 21.2,
+                                "fat": 9.1,
+                                "children": []
+                            },
+                            {
+                                "category": "pigeon",
+                                "group": "MCM",
+                                "name": "pigeon",
+                                "energy": 137.5,
+                                "protein": 21.3,
+                                "fat": 5.800000000000001,
+                                "children": []
+                            },
+                            {
+                                "category": "turkey",
+                                "group": "MCO",
+                                "name": "turkey",
+                                "energy": 183.61904761904762,
+                                "protein": 25.90952380952381,
+                                "fat": 8.885714285714286,
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "category": "game",
+                        "group": "ME",
+                        "name": "game",
+                        "energy": 131.14285714285714,
+                        "protein": 23.61428571428571,
+                        "fat": 4.071428571428571,
+                        "children": [
+                            {
+                                "category": "hare",
+                                "group": "MEA",
+                                "name": "hare",
+                                "energy": 165.5,
+                                "protein": 25.85,
+                                "fat": 6.9,
+                                "children": []
+                            },
+                            {
+                                "category": "rabbit",
+                                "group": "MEC",
+                                "name": "rabbit",
+                                "energy": 106.33333333333333,
+                                "protein": 18.599999999999998,
+                                "fat": 3.533333333333333,
+                                "children": []
+                            },
+                            {
+                                "category": "venison",
+                                "group": "MEE",
+                                "name": "venison",
+                                "energy": 134.0,
+                                "protein": 28.9,
+                                "fat": 2.05,
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "category": "offal",
+                        "group": "MG",
+                        "name": "offal",
+                        "energy": 162.775,
+                        "protein": 20.5325,
+                        "fat": 8.877500000000001,
+                        "children": []
+                    },
+                    {
+                        "category": "burgers and grillsteaks",
+                        "group": "MBG",
+                        "name": "burgers",
+                        "energy": 258.8181818181818,
+                        "protein": 16.881818181818183,
+                        "fat": 15.272727272727273,
+                        "children": []
+                    },
+                    {
+                        "category": "meat products, such as sausages",
+                        "group": "MI",
+                        "name": "meat products",
+                        "energy": 268.93023255813955,
+                        "protein": 14.453488372093023,
+                        "fat": 18.83720930232558,
+                        "children": [
+                            {
+                                "category": "curry, chicken tikka masala",
+                                "group": "MIG",
+                                "name": "other meat products",
+                                "energy": 156.0,
+                                "protein": 12.4,
+                                "fat": 9.8,
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "category": "meat dishes",
+                        "group": "MR",
+                        "name": "meat dishes",
+                        "energy": 170.82,
+                        "protein": 12.693999999999999,
+                        "fat": 9.666666666666666,
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "category": "fats and oils",
+                "group": "O",
+                "name": "fats",
+                "energy": 751.1111111111111,
+                "protein": 0.6555555555555556,
+                "fat": 81.61111111111113,
+                "children": [
+                    {
+                        "category": "butter and spreading fats",
+                        "group": "OA",
+                        "name": "spreading fats",
+                        "energy": 674.0,
+                        "protein": 0.5,
+                        "fat": 74.44,
+                        "children": []
+                    },
+                    {
+                        "category": "butteroil, unsalted",
+                        "group": "OB",
+                        "name": "animal fats",
+                        "energy": 896.0,
+                        "protein": 0.6,
+                        "fat": 99.3,
+                        "children": []
+                    },
+                    {
+                        "category": "oils",
+                        "group": "OC",
+                        "name": "oils",
+                        "energy": 898.0,
+                        "protein": 0.2,
+                        "fat": 99.7,
+                        "children": []
+                    },
+                    {
+                        "category": "cooking fats",
+                        "group": "OF",
+                        "name": "cooking fats",
+                        "energy": 798.0,
+                        "protein": 1.3,
+                        "fat": 81.65,
+                        "children": []
+                    }
+                ]
+            },
+            {
                 "category": "beverages",
-                "name": "beverages",
-                "protein": 4.158974358974359,
                 "group": "P",
-                "fat": 2.805128205128204
-            },
-            {
-                "energy": 118.58333333333333,
+                "name": "beverages",
+                "energy": 151.82051282051282,
+                "protein": 4.158974358974359,
+                "fat": 2.805128205128204,
                 "children": [
                     {
-                        "energy": 91.14285714285714,
-                        "children": [],
-                        "category": "wines",
-                        "name": "wines",
-                        "protein": 0.17142857142857143,
-                        "group": "QE",
-                        "fat": 0.028571428571428574
+                        "category": "powdered drinks, essences and infusions",
+                        "group": "PA",
+                        "name": "powdered drinks",
+                        "energy": 176.58620689655172,
+                        "protein": 5.448275862068965,
+                        "fat": 3.710344827586207,
+                        "children": [
+                            {
+                                "category": "powered drinks and essences",
+                                "group": "PAA",
+                                "name": "powered drinks",
+                                "energy": 246.85,
+                                "protein": 7.700000000000003,
+                                "fat": 4.790000000000001,
+                                "children": []
+                            },
+                            {
+                                "category": "coffee and tea",
+                                "group": "PAC",
+                                "name": "infusions",
+                                "energy": 20.444444444444443,
+                                "protein": 0.4444444444444444,
+                                "fat": 1.3111111111111111,
+                                "children": []
+                            }
+                        ]
                     },
                     {
-                        "energy": 136.5,
-                        "children": [],
-                        "category": "fortified wines",
-                        "name": "fortified wines",
-                        "protein": 0.1,
-                        "group": "QF",
-                        "fat": 0.0
+                        "category": "soft drinks",
+                        "group": "PC",
+                        "name": "soft drinks",
+                        "energy": 91.25,
+                        "protein": 0.05,
+                        "fat": 0.0,
+                        "children": [
+                            {
+                                "category": "carbonated drinks",
+                                "group": "PCA",
+                                "name": "carbonated drinks",
+                                "energy": 22.0,
+                                "protein": 0.0,
+                                "fat": 0.0,
+                                "children": []
+                            },
+                            {
+                                "category": "squash and cordials",
+                                "group": "PCC",
+                                "name": "squash and cordials",
+                                "energy": 114.33333333333333,
+                                "protein": 0.06666666666666667,
+                                "fat": 0.0,
+                                "children": []
+                            }
+                        ]
                     },
                     {
-                        "energy": 109.0,
-                        "children": [],
-                        "category": "vermouths",
-                        "name": "vermouths",
-                        "protein": 0.1,
-                        "group": "QG",
-                        "fat": 0.0
-                    },
-                    {
-                        "energy": 201.5,
-                        "children": [],
-                        "category": "liqueurs",
-                        "name": "liqueurs",
-                        "protein": 3.5,
-                        "group": "QI",
-                        "fat": 7.65
+                        "category": "juices",
+                        "group": "PE",
+                        "name": "juices",
+                        "energy": 81.6,
+                        "protein": 0.4,
+                        "fat": 0.19999999999999998,
+                        "children": []
                     }
-                ],
+                ]
+            },
+            {
                 "category": "alcoholic beverages",
-                "name": "alcohol",
-                "protein": 0.7083333333333334,
                 "group": "Q",
-                "fat": 1.2916666666666667
-            },
-            {
-                "energy": 401.36764705882354,
+                "name": "alcohol",
+                "energy": 118.58333333333333,
+                "protein": 0.7083333333333334,
+                "fat": 1.2916666666666667,
                 "children": [
                     {
-                        "energy": 311.29411764705884,
-                        "children": [],
-                        "category": "sugars, syrups and preserves",
-                        "name": "sugars",
-                        "protein": 0.9294117647058822,
-                        "group": "SC",
-                        "fat": 4.994117647058823
+                        "category": "wines",
+                        "group": "QE",
+                        "name": "wines",
+                        "energy": 91.14285714285714,
+                        "protein": 0.17142857142857143,
+                        "fat": 0.028571428571428574,
+                        "children": []
                     },
                     {
-                        "energy": 423.75757575757575,
-                        "children": [
-                            {
-                                "energy": 476.8235294117647,
-                                "children": [],
-                                "category": "chocolate confectionery",
-                                "name": "chocolate confectionery",
-                                "protein": 5.388235294117647,
-                                "group": "SEA",
-                                "fat": 23.56470588235294
-                            },
-                            {
-                                "energy": 367.375,
-                                "children": [],
-                                "category": "non-chocolate confectionery",
-                                "name": "non-chocolate",
-                                "protein": 3.23125,
-                                "group": "SEC",
-                                "fat": 7.39375
-                            }
-                        ],
-                        "category": "confectionery",
-                        "name": "confectionery",
-                        "protein": 4.342424242424242,
-                        "group": "SE",
-                        "fat": 15.724242424242426
+                        "category": "fortified wines",
+                        "group": "QF",
+                        "name": "fortified wines",
+                        "energy": 136.5,
+                        "protein": 0.1,
+                        "fat": 0.0,
+                        "children": []
                     },
                     {
-                        "energy": 456.93333333333334,
-                        "children": [
-                            {
-                                "energy": 506.0,
-                                "children": [],
-                                "category": "potato-based snacks",
-                                "name": "potato snacks",
-                                "protein": 5.25,
-                                "group": "SNA",
-                                "fat": 30.3
-                            },
-                            {
-                                "energy": 482.5,
-                                "children": [],
-                                "category": "non-potato snacks",
-                                "name": "non-potato",
-                                "protein": 18.700000000000003,
-                                "group": "SNC",
-                                "fat": 28.450000000000003
-                            }
-                        ],
-                        "category": "savoury snacks",
-                        "name": "snacks",
-                        "protein": 12.073333333333334,
-                        "group": "SN",
-                        "fat": 24.74666666666667
+                        "category": "vermouths",
+                        "group": "QG",
+                        "name": "vermouths",
+                        "energy": 109.0,
+                        "protein": 0.1,
+                        "fat": 0.0,
+                        "children": []
+                    },
+                    {
+                        "category": "liqueurs",
+                        "group": "QI",
+                        "name": "liqueurs",
+                        "energy": 201.5,
+                        "protein": 3.5,
+                        "fat": 7.65,
+                        "children": []
                     }
-                ],
+                ]
+            },
+            {
                 "category": "sugar, preserves and snacks",
-                "name": "snacks",
-                "protein": 5.09264705882353,
                 "group": "S",
-                "fat": 15.145588235294115
-            },
-            {
-                "energy": 153.64227642276424,
+                "name": "snacks",
+                "energy": 401.36764705882354,
+                "protein": 5.09264705882353,
+                "fat": 15.145588235294115,
                 "children": [
                     {
-                        "energy": 76.66666666666667,
+                        "category": "sugars, syrups and preserves",
+                        "group": "SC",
+                        "name": "sugars",
+                        "energy": 311.29411764705884,
+                        "protein": 0.9294117647058822,
+                        "fat": 4.994117647058823,
+                        "children": []
+                    },
+                    {
+                        "category": "confectionery",
+                        "group": "SE",
+                        "name": "confectionery",
+                        "energy": 423.75757575757575,
+                        "protein": 4.342424242424242,
+                        "fat": 15.724242424242426,
                         "children": [
                             {
-                                "energy": 73.41666666666667,
-                                "children": [],
-                                "category": "home made soups",
-                                "name": "home made",
-                                "protein": 3.6916666666666664,
-                                "group": "WAA",
-                                "fat": 4.0166666666666675
+                                "category": "chocolate confectionery",
+                                "group": "SEA",
+                                "name": "chocolate confectionery",
+                                "energy": 476.8235294117647,
+                                "protein": 5.388235294117647,
+                                "fat": 23.56470588235294,
+                                "children": []
                             },
                             {
-                                "energy": 49.44444444444444,
-                                "children": [],
-                                "category": "canned soups",
-                                "name": "canned soups",
-                                "protein": 1.7111111111111112,
-                                "group": "WAC",
-                                "fat": 2.3000000000000003
-                            },
-                            {
-                                "energy": 190.5,
-                                "children": [],
-                                "category": "packet soups",
-                                "name": "packet soups",
-                                "protein": 6.15,
-                                "group": "WAE",
-                                "fat": 4.95
+                                "category": "non-chocolate confectionery",
+                                "group": "SEC",
+                                "name": "non-chocolate",
+                                "energy": 367.375,
+                                "protein": 3.23125,
+                                "fat": 7.39375,
+                                "children": []
                             }
-                        ],
-                        "category": "soups",
-                        "name": "soups",
-                        "protein": 3.033333333333333,
-                        "group": "WA",
-                        "fat": 3.306666666666666
+                        ]
                     },
                     {
-                        "energy": 185.15277777777777,
+                        "category": "savoury snacks",
+                        "group": "SN",
+                        "name": "snacks",
+                        "energy": 456.93333333333334,
+                        "protein": 12.073333333333334,
+                        "fat": 24.74666666666667,
                         "children": [
                             {
-                                "energy": 124.77777777777777,
-                                "children": [],
-                                "category": "dairy sauces",
-                                "name": "dairy sauces",
-                                "protein": 4.922222222222222,
-                                "group": "WCD",
-                                "fat": 6.655555555555555
+                                "category": "potato-based snacks",
+                                "group": "SNA",
+                                "name": "potato snacks",
+                                "energy": 506.0,
+                                "protein": 5.25,
+                                "fat": 30.3,
+                                "children": []
                             },
                             {
-                                "energy": 278.25,
-                                "children": [],
-                                "category": "salad sauces, dressings and pickles",
-                                "name": "salad sauces",
-                                "protein": 1.4166666666666667,
-                                "group": "WCG",
-                                "fat": 23.11666666666667
-                            },
-                            {
-                                "energy": 132.83333333333334,
-                                "children": [],
-                                "category": "non-salad sauces, including ketchup",
-                                "name": "non-salad sauces",
-                                "protein": 1.2750000000000001,
-                                "group": "WCN",
-                                "fat": 3.608333333333334
+                                "category": "non-potato snacks",
+                                "group": "SNC",
+                                "name": "non-potato",
+                                "energy": 482.5,
+                                "protein": 18.700000000000003,
+                                "fat": 28.450000000000003,
+                                "children": []
                             }
-                        ],
-                        "category": "sauses",
-                        "name": "sauses",
-                        "protein": 2.8097222222222222,
-                        "group": "WC",
-                        "fat": 13.311111111111112
-                    },
-                    {
-                        "energy": 177.5,
-                        "children": [],
-                        "category": "pickles and chutneys",
-                        "name": "pickles",
-                        "protein": 0.85,
-                        "group": "WE",
-                        "fat": 0.15000000000000002
-                    },
-                    {
-                        "energy": 153.26315789473685,
-                        "children": [],
-                        "category": "miscellaneous foods, such as salt and yeast",
-                        "name": "miscellaneous foods",
-                        "protein": 15.289473684210526,
-                        "group": "WY",
-                        "fat": 4.5
+                        ]
                     }
-                ],
+                ]
+            },
+            {
                 "category": "soup and sauses",
-                "name": "soup",
-                "protein": 4.760162601626016,
                 "group": "W",
-                "fat": 9.295934959349594
+                "name": "soup",
+                "energy": 153.64227642276424,
+                "protein": 4.760162601626016,
+                "fat": 9.295934959349594,
+                "children": [
+                    {
+                        "category": "soups",
+                        "group": "WA",
+                        "name": "soups",
+                        "energy": 76.66666666666667,
+                        "protein": 3.033333333333333,
+                        "fat": 3.306666666666666,
+                        "children": [
+                            {
+                                "category": "home made soups",
+                                "group": "WAA",
+                                "name": "home made",
+                                "energy": 73.41666666666667,
+                                "protein": 3.6916666666666664,
+                                "fat": 4.0166666666666675,
+                                "children": []
+                            },
+                            {
+                                "category": "canned soups",
+                                "group": "WAC",
+                                "name": "canned soups",
+                                "energy": 49.44444444444444,
+                                "protein": 1.7111111111111112,
+                                "fat": 2.3000000000000003,
+                                "children": []
+                            },
+                            {
+                                "category": "packet soups",
+                                "group": "WAE",
+                                "name": "packet soups",
+                                "energy": 190.5,
+                                "protein": 6.15,
+                                "fat": 4.95,
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "category": "sauses",
+                        "group": "WC",
+                        "name": "sauses",
+                        "energy": 185.15277777777777,
+                        "protein": 2.8097222222222222,
+                        "fat": 13.311111111111112,
+                        "children": [
+                            {
+                                "category": "dairy sauces",
+                                "group": "WCD",
+                                "name": "dairy sauces",
+                                "energy": 124.77777777777777,
+                                "protein": 4.922222222222222,
+                                "fat": 6.655555555555555,
+                                "children": []
+                            },
+                            {
+                                "category": "salad sauces, dressings and pickles",
+                                "group": "WCG",
+                                "name": "salad sauces",
+                                "energy": 278.25,
+                                "protein": 1.4166666666666667,
+                                "fat": 23.11666666666667,
+                                "children": []
+                            },
+                            {
+                                "category": "non-salad sauces, including ketchup",
+                                "group": "WCN",
+                                "name": "non-salad sauces",
+                                "energy": 132.83333333333334,
+                                "protein": 1.2750000000000001,
+                                "fat": 3.608333333333334,
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "category": "pickles and chutneys",
+                        "group": "WE",
+                        "name": "pickles",
+                        "energy": 177.5,
+                        "protein": 0.85,
+                        "fat": 0.15000000000000002,
+                        "children": []
+                    },
+                    {
+                        "category": "miscellaneous foods, such as salt and yeast",
+                        "group": "WY",
+                        "name": "miscellaneous foods",
+                        "energy": 153.26315789473685,
+                        "protein": 15.289473684210526,
+                        "fat": 4.5,
+                        "children": []
+                    }
+                ]
             }
-        ],
-        "category": "all of them",
-        "name": "total",
-        "protein": 10.554041146216019,
-        "group": "X",
-        "fat": 9.780529022777369
+        ]
     }
 ]

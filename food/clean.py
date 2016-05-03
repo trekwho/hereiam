@@ -303,6 +303,14 @@ all_data = [{'name':'total',
                      'energy':None,
                      'children':[]
                     },
+                    {'name':'fat',
+                     'category':'fat spread',
+                     'group':'BTM',
+                     'fat':None,
+                     'protein':None,
+                     'energy':None,
+                     'children':[]
+                    },
                     {'name':'sauces',
                      'category':'savoury dishes and sauces',
                      'group':'BV',
@@ -1078,8 +1086,8 @@ for letter in [chr(i) for i in list(range(ord('A'),ord('E'))) + list(range(ord('
                 child['energy'] = ene_letter
 
 
-#for grandchildren, that is, group of two-letter name (except for 'MBG')
-for word in ['AA','AB','AC','AD','AE','AF','AG','AI','AK','AM','AN','AO','AP','AS','AT','BA','BC','BH','BJ','BL','BN','BP','BR','BV','CA','CD','DA','DB','DF','DG','DI','DR','FA','FC','GA','JA','JC','JK','JM','JR','MA','MC','ME','MG','MBG','MI','MR','OA','OB','OC','OF','PA','PC','PE','QE','QF','QG','QI','SC','SE','SN','WA','WC','WE','WY']:
+#for grandchildren, that is, group of two-letter name (except for 'BTM' and 'MBG')
+for word in ['AA','AB','AC','AD','AE','AF','AG','AI','AK','AM','AN','AO','AP','AS','AT','BA','BC','BH','BJ','BL','BN','BP','BR','BTM','BV','CA','CD','DA','DB','DF','DG','DI','DR','FA','FC','GA','JA','JC','JK','JM','JR','MA','MC','ME','MG','MBG','MI','MR','OA','OB','OC','OF','PA','PC','PE','QE','QF','QG','QI','SC','SE','SN','WA','WC','WE','WY']:
     data_word = data[data['Group'].map(lambda x: x.startswith(word))]
     fat_word = data_word['Fat(g)'].astype(float).mean()
     pro_word = data_word['Protein(g)'].astype(float).mean()
