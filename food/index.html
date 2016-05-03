@@ -164,7 +164,7 @@
                     .attr("class","bar_title")
                     .attr("x",padding.left+(width - padding.left -padding.right)/3*2 - 40)
                     .attr("y",padding.top)
-                    .text("Food with highest protein content (per 100g)")
+                    .text("Food with highest protein contents (per 100g)")
                     .style({'fill':'#8182a7', 'font-weight':'500'});
 
                 //'foreignObject' learned from http://stackoverflow.com/questions/13241475/how-do-i-include-newlines-in-labels-in-d3-charts
@@ -255,7 +255,7 @@
                         .attr("class","bar_title")
                         .attr("x",padding.left+(width - padding.left -padding.right)/3*2 - 40)
                         .attr("y",padding.top)
-                        .text("Food with highest fat content (per 100g)")
+                        .text("Food with highest fat contents (per 100g)")
                         .style({'fill':'#8182a7', 'font-weight':'500'});
 
                     var left_bars = svg.append('g')
@@ -607,6 +607,7 @@
         
         //insert user generated content into facts to be displayed
         function input(){
+            alert("Fun fact uploaded! Cheers.");
             facts.push({"text":document.getElementById('user_generated').value});
         }
         </script>
