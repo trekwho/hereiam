@@ -1,0 +1,123 @@
+<!-- word cloud learned from http://bl.ocks.org/ericcoopey/6382449-->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <script src="jquery-1.11.3.js"></script>
+    <script src="d3.layout.cloud.js"></script>
+    <title>Hai Zi and Bei Dao</title>
+    <style>
+        body{
+            background: #aaa;
+        }
+        #container {
+            font-family:Helvetica,sans-serif;
+            position: absolute;
+            top: 150px;
+            height: 300px;
+            width: 100%;
+            margin: 0;
+            vertical-align: middle;
+            padding: 0;
+        }
+        #haizi, #beidao{
+            float: left;
+            width: 50%;
+            height: 100%;
+            text-align: center;
+            padding-top:30px;
+            margin: 0;
+            background: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="haizi">海子</div>
+        <div id="beidao">北岛</div>
+    </div>
+    <script>
+    var haizi_list =[];
+    var beidao_list =[];
+    var width = document.getElementById("haizi").clientWidth;
+    var height = document.getElementById("haizi").clientHeight;
+    var color = d3.scale.linear()
+                .domain([150,120,100,90,70,60,50,40,30,20,0])
+                .range(["#ddd", "#ccc", "#bbb", "#aaa", "#999", "#888", "#777", "#666", "#555", "#444", "#333", "#222"]);
+    d3.csv("poets.csv", function(error, data){
+            var haizi_word = data.map(function(d){return d["haizi_word"];});
+            var beidao_word = data.map(function(d){return d["beidao_word"];});
+            var haizi_count = data.map(function(d){return +d["haizi_count"];});
+            var beidao_count = data.map(function(d){return +d["beidao_count"];});
+            for(var i = 0; i <100; i++){
+                var pair = {};
+                pair["text"] = haizi_word[i];
+                pair["size"] = haizi_count[i]
+                haizi_list.push(pair);
+
+                var new_pair ={};
+                new_pair["text"] = beidao_word[i];
+                new_pair["size"] = beidao_count[i];
+                beidao_list.push(new_pair);
+            }
+
+            d3.layout.cloud().size([800, 300])
+                .words(haizi_list)
+                .rotate(0)
+                .fontSize(function(d) { return d.size; })
+                .on("end", draw_haizi)
+                .start();
+
+            d3.layout.cloud().size([800,300])
+                .words(beidao_list)
+                .rotate(0)
+                .fontSize(function(d) { return d.size; })
+                .on("end", draw_beidao)
+                .start();
+
+            function draw_haizi(words) {
+                d3.select("#haizi").append("svg")
+                        .attr("width", width)
+                        .attr("height", height)
+                        .attr("class", "wordcloud")
+                        .append("g")
+                        .attr("transform", "translate(260,150)")
+                        .selectAll("text")
+                        .data(words)
+                        .enter().append("text")
+                        .style("font-size", function(d) { return d.size + "px"; })
+                        .style("font-weight",function(d){ return d.size * 20;})
+                        .style("fill", function(d, i) { return color(i); })
+                        .attr("transform", function(d) {
+                            return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";
+                        })
+                        .text(function(d) { return d.text; });
+            }
+
+            function draw_beidao(words){
+                d3.select("#beidao").append("svg")
+                        .attr("width", width)
+                        .attr("height", height)
+                        .attr("class", "wordcloud")
+                        .append("g")
+                        .attr("transform", "translate(300,150)")
+                        .selectAll("text")
+                        .data(words)
+                        .enter().append("text")
+                        .style("font-size", function(d) { return d.size/7*4 + "px"; })
+                        .style("font-weight",function(d){ return d.size * 20;})
+                        .style("fill", function(d, i) { return color(i); })
+                        .attr("transform", function(d) {
+                            return "translate(" + [d.x/24*19, d.y/10*7] + ")rotate(" + d.rotate + ")";
+                        })
+                        .text(function(d) { return d.text; });
+            }
+            
+    })
+
+    </script>
+</body>
+
+</html>
