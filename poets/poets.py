@@ -11,25 +11,25 @@ output = {'haizi_word':[],
           'beidao_word':[],
           'beidao_count':[]}
 
-words_haizi = {}
-for word in jieba.cut(haizi):
-    if word in blacklist or len(word) == 1:
-        continue
-    words_haizi[word] = words_haizi.get(word, 0) + 1
-sort_words_haizi =sorted(words_haizi.items(), key=operator.itemgetter(1), reverse=True)
+def find_words(poet):
+    global words_poet, sort_words_poet
+    words={}
+    for word in jieba.cut(poet):
+        if word in blacklist or len(word) == 1:
+            continue
+        words[word] = words.get(word,0) + 1
+    sort_words = sorted(words.items(), key=operator.itemgetter(1), reverse=True)
+    return sort_words
 
-for pair in sort_words_haizi[:100]:
+
+sort_haizi = find_words(haizi)
+sort_beidao = find_words(beidao)
+    
+for pair in sort_haizi[:100]:
     output['haizi_word'].append(list(pair)[0])
     output['haizi_count'].append(list(pair)[1])
 
-words_beidao = {}
-for word in jieba.cut(beidao):
-    if word in blacklist or len(word) == 1:
-        continue
-    words_beidao[word] = words_beidao.get(word, 0) + 1
-sort_words_beidao =sorted(words_beidao.items(), key=operator.itemgetter(1), reverse=True)
-
-for pair in sort_words_beidao[:100]:
+for pair in sort_beidao[:100]:
     output['beidao_word'].append(list(pair)[0])
     output['beidao_count'].append(list(pair)[1])
 
