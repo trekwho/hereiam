@@ -1,0 +1,261 @@
+<DOCTYPE! html>
+<html>
+	<head>
+		<title>movie sunburst</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<link rel="stylesheet" href="sunburst.css" />
+		<script src="../javascripts/jquery-1.11.1.min.js"></script>
+		<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+	</head>
+	<body>
+		<div id="box">
+			<div id="total" style="visibility:hidden;">
+				<span id="number"></span>部此类</br>别电影位列票房前100名。
+			</div>
+			<div id="button_box">
+				<input class="buttons active" id="button_all" type="button" value="查看全部">
+				<input class= "buttons" id="button_for" type="button" value="进口电影">
+				<input class= "buttons" id="button_dom" type="button" value="国产电影">
+			</div>
+			<div id="explanation"><p id="default">滑动鼠标<br><br>查看电影具体信息</p><p id="info">注：图柱长度代表评分，宽度代表票房，<br>圆圈由外到内为9至6分。<br>数据来源：<a href="https://www.douban.com/doulist/1295618/" target="_blank">豆瓣电影</a>，获取于2016年6月22日</p></div>
+		</div>
+		<script type="text/javascript">
+			//inspired by http://bl.ocks.org/kerryrodden/7090426, https://bl.ocks.org/mbostock/4348373
+			var width = 800;
+			var height = 600;
+			var radius = Math.min(width, height)/2;
+			var colour = d3.scale.ordinal()
+						.range(["#285875","#317b78","#f2c13f","#ffa333","#eb5b4c","#cf1717","#3f3775"]);
+						// .range(["#a43640","#c36a41","#cc964b","#547943","#317b78","#285875","#3f3775"]);
+
+			//set arc's radius for genre
+			var arc = d3.svg.arc()
+			    .outerRadius(radius - 200)
+			    .innerRadius(radius - 250);
+
+			//set radius for every single movie, as needle
+			var needle_arc = d3.svg.arc()
+				//set "5.9" as division line for ratings
+				.outerRadius(function(d){ return (d.data.rating - 5.95) * 30 + (radius - 120);})
+				.innerRadius(radius - 120);
+
+			//to convert data into proper proportion for circle
+			var pie = d3.layout.pie()
+				.padAngle(.035)
+			    .sort(null)
+			    .value(function(d) { return d.values; });
+
+			var needle = d3.layout.pie()
+				.padAngle(.003)
+				.sort(null)
+				.value(function(d){ return d.box;});
+
+			//start to draw svg
+			var svg = d3.select("#box").append("svg")
+			    .attr("width", width)
+			    .attr("height", height)
+			  	.append("g")
+			  	.attr("id","container")
+			    .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+
+			//introduce data
+			d3.csv("ranks_sort.csv", function(error, data) {
+			  if (error) throw error;
+
+			 // data = data.filter(function(d){return d.type.startsWith("进口")});
+
+			  var count = d3.nest()
+			  				.key(function(d){return d.genre})
+			  				.rollup(function(leaves){return leaves.length})
+			  				.entries(data);
+
+			  var circle = [{"radius":"270"},{"radius":"240"},{"radius":"210"}];
+
+			  //draw circles for rating "7" "8" and "9"
+			  var circles = svg.selectAll(".circle")
+			  					.data(circle)
+								.enter()
+								.append("circle")
+								.attr("class","circle");
+			  circles
+					.attr("r",function(d){return d.radius;})
+					.style("stroke","#ccc")
+					.style("stroke-width","0.5px")
+					.style("fill","none");
+
+			  //draw the arc for movie genres
+			  var g_arc = svg.selectAll(".arc")
+			      .data(pie(count))
+			      .enter()
+			      .append("g")
+			      .attr("class", "arc");
+
+			  g_arc.append("path")
+			  	  .attr("class","arc")
+			      .attr("d", arc)
+			      .style("fill", function(d) { return colour(d.data.key); });
+
+			  country("");
+			  mouseEvents();
+
+			  $('#button_all').click(function(){
+
+			    $(this).toggleClass('active');
+			    country("");
+			    $('#button_for').removeClass('active');
+			    $('#button_dom').removeClass('active');
+
+			    var info = "<p id='default'>滑动鼠标<br><br>查看电影具体信息</p><p id='info'>注：图柱长度代表评分，宽度代表票房，<br>圆圈由外到内为9至6分。<br>数据来源：<a href='https://www.douban.com/doulist/1295618/' target='_blank'>豆瓣电影</a>，获取于2016年6月22日</p>";
+			  	d3.select("#explanation")
+					.html(info);
+
+				mouseEvents();
+			  });
+
+			  $('#button_for').click(function(){
+
+			    $(this).toggleClass('active');
+			    country("进口");
+			    $('#button_all').removeClass('active');
+			    $('#button_dom').removeClass('active');
+
+			    var info = "<p class='type'>位列票房前100名的进口电影共计48部，评分均在6分以上，绝大部分属于动作片和科幻片。</p>";
+			    d3.select("#explanation")
+					.html(info);
+
+				mouseEvents();
+			  });
+
+			  $('#button_dom').click(function(){
+
+			    $(this).toggleClass('active');
+			    country("国产");
+			    $('#button_for').removeClass('active');
+			    $('#button_all').removeClass('active');
+
+			    var info = "<p class='type'>上榜的国产电影共计52部，以喜剧、爱情和剧情片居多，评分低于6分的多达19部。</p>";
+			    d3.select("#explanation")
+					.html(info);
+
+				mouseEvents();
+			  });
+
+			 //function for selecting foreign/domestic movies
+			function country(id){
+
+				svg.selectAll("g.needle")
+					// .data([])
+					// .exit()
+					.remove();
+
+				//draw needles for movies
+			    var g_needle = svg.selectAll(".needle")
+			  		.data(needle(data))
+			  		.enter()
+			  		.append("g")
+			  		.attr("class","needle");
+
+			    g_needle.append("path")
+			  		.filter(function(d){return d.data.type.startsWith(id)})
+			  		.attr("class","needle")
+			  		.attr("d",needle_arc)
+			  		.style("fill",function(d) { return colour(d.data.genre);});
+			 }
+
+			 //function for mouse events 
+			 function mouseEvents(){
+				  d3.selectAll("path.arc").on("mouseover", mouseOver);
+				  d3.selectAll("path.needle").on("mouseover",mouseOn);
+				  d3.select("#container").on("mouseout", mouseOut);
+			 }
+
+			  g_arc.append("text")
+			      .attr("transform", function(d) { return "translate(" + arc.centroid(d) + ")"; })
+			      .attr("dy", "5px")
+			      .attr("dx","-10px")
+			      .style("fill","white")
+			      .style("font-family","sans-serif")
+			      .style("font-size","12px")
+			      .text(function(d){return d.data.key});
+			});
+			
+			//mouse events are written from here
+			function mouseOver(d) {
+				
+			  var number = d.value;
+
+			  d3.select("#number")
+			      .text(number);
+
+			  d3.select("#total")
+			      .style("visibility", "");
+
+			  d3.selectAll("path")
+			      .style("opacity", 0.3);
+			  
+			  d3.select(this)
+			      .style("opacity", 1);
+			}
+
+			function mouseOn(d){
+
+				var content = "<h4>" + d.data.title + "</h4><p>评分： " + d.data.rating + "<br>票房排名: " + d.data.rank + "<br>票房：" + d.data.box/100000000 + "亿元</p>";
+
+				d3.select("#explanation")
+					.html(content);
+
+				d3.selectAll("path")
+					.style("opacity",0.3)
+
+				d3.select(this)
+					// .transition(500)
+                    .style("opacity",1);
+			}
+
+			function mouseOut(d) {
+
+			  var info = "<p id='default'>滑动鼠标<br><br>查看电影具体信息</p><p id='info'>注：图柱长度代表评分，宽度代表票房，<br>圆圈由外到内为9至6分。<br>数据来源：<a href='https://www.douban.com/doulist/1295618/' target='_blank'>豆瓣电影</a>，获取于2016年6月22日</p>";
+
+			  d3.select("#explanation")
+					.html(info);
+				
+			  d3.selectAll("path")
+			      .style("opacity", 1);
+
+			  d3.select("#total")
+			      .style("visibility", "hidden");
+
+			}
+
+		</script>
+	</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
