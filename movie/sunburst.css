@@ -109,15 +109,26 @@ g.needle{
 
 	#button_box{
 		top: 600px;
-		left: 250px;
+		left: 260px;
 	}
 
 	#explanation{
 		top: 400px;
-		left: 250px;
+		left: 260px;
 	}
 
 	#default{
 		padding: 5px 10px 1px 10px;
+	}
+
+	#total {
+		top: 180px;
+		left: 380px;
+		width: 60px;
+		font-size: 10px;
+	}
+
+	#number {
+	    font-size: 20px;
 	}
 }
