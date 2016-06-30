@@ -101,7 +101,10 @@ g.needle{
 }
 
 @media screen and (max-width: 800px) {
-
+	body{
+		height: 900px;
+	}
+	
 	#box{
 		width: 800px;
 		height: 400px;
