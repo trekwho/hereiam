@@ -22,8 +22,6 @@
 		</div>
 		<script type="text/javascript">
 			//inspired by http://bl.ocks.org/kerryrodden/7090426, https://bl.ocks.org/mbostock/4348373
-			// var width = 800;
-			// var height = 600;
 			var width = document.getElementById("box").clientWidth;
             var height = document.getElementById("box").clientHeight;
 
@@ -34,14 +32,14 @@
 
 			//set arc's radius for genre
 			var arc = d3.svg.arc()
-			    .outerRadius(radius - height/3)//200
-			    .innerRadius(radius - height/2.4);//250
+			    .outerRadius(radius - height/3)
+			    .innerRadius(radius - height/2.4);
 
 			//set radius for every single movie, as needle
 			var needle_arc = d3.svg.arc()
 				//set "5.9" as division line for ratings
 				.outerRadius(function(d){ return (d.data.rating - 5.95) * 30 + (radius - height/5);})
-				.innerRadius(radius - height/5);//120
+				.innerRadius(radius - height/5);
 
 			//to convert data into proper proportion for circle
 			var pie = d3.layout.pie()
