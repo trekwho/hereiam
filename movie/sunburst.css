@@ -8,6 +8,11 @@ body {
   background-color: white;
 }
 
+#box{
+	width: 800px;
+	height: 600px;
+}
+
 #total {
   position: absolute;
   top: 275px;
@@ -96,17 +101,23 @@ g.needle{
 }
 
 @media screen and (max-width: 800px) {
+
+	#box{
+		width: 800px;
+		height: 400px;
+	}
+
 	#button_box{
-		top: 650px;
+		top: 600px;
 		left: 250px;
 	}
 
 	#explanation{
-		top: 780px;
+		top: 400px;
 		left: 250px;
 	}
 
 	#default{
-		padding: 10px 10px 3px 10px;
+		padding: 5px 10px 1px 10px;
 	}
 }

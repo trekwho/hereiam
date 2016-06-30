@@ -22,8 +22,11 @@
 		</div>
 		<script type="text/javascript">
 			//inspired by http://bl.ocks.org/kerryrodden/7090426, https://bl.ocks.org/mbostock/4348373
-			var width = 800;
-			var height = 600;
+			// var width = 800;
+			// var height = 600;
+			var width = document.getElementById("box").clientWidth;
+            var height = document.getElementById("box").clientHeight;
+
 			var radius = Math.min(width, height)/2;
 			var colour = d3.scale.ordinal()
 						.range(["#285875","#317b78","#f2c13f","#ffa333","#eb5b4c","#cf1717","#3f3775"]);
@@ -31,14 +34,14 @@
 
 			//set arc's radius for genre
 			var arc = d3.svg.arc()
-			    .outerRadius(radius - 200)
-			    .innerRadius(radius - 250);
+			    .outerRadius(radius - height/3)//200
+			    .innerRadius(radius - height/2.4);//250
 
 			//set radius for every single movie, as needle
 			var needle_arc = d3.svg.arc()
 				//set "5.9" as division line for ratings
-				.outerRadius(function(d){ return (d.data.rating - 5.95) * 30 + (radius - 120);})
-				.innerRadius(radius - 120);
+				.outerRadius(function(d){ return (d.data.rating - 5.95) * 30 + (radius - height/5);})
+				.innerRadius(radius - height/5);//120
 
 			//to convert data into proper proportion for circle
 			var pie = d3.layout.pie()
@@ -79,7 +82,7 @@
 								.append("circle")
 								.attr("class","circle");
 			  circles
-					.attr("r",function(d){return d.radius;})
+					.attr("r",function(d){return d.radius * height/600;})
 					.style("stroke","#ccc")
 					.style("stroke-width","0.5px")
 					.style("fill","none");
