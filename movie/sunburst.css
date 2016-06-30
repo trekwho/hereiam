@@ -94,3 +94,19 @@ g.needle{
 .active{
 	background-color: #317b78;
 }
+
+@media screen and (max-width: 800px) {
+	#button_box{
+		top: 650px;
+		left: 250px;
+	}
+
+	#explanation{
+		top: 780px;
+		left: 250px;
+	}
+
+	#default{
+		padding: 10px 10px 3px 10px;
+	}
+}
