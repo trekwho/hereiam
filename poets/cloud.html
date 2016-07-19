@@ -65,6 +65,7 @@
 
             d3.layout.cloud().size([800, 300])
                 .words(haizi_list)
+                .padding(10)
                 .rotate(0)
                 .fontSize(function(d) { return d.size; })
                 .on("end", draw_haizi)
