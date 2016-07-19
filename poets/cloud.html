@@ -65,7 +65,7 @@
 
             d3.layout.cloud().size([800, 300])
                 .words(haizi_list)
-                .padding(5)
+                .padding(2)
                 .rotate(0)
                 .fontSize(function(d) { return d.size; })
                 .on("end", draw_haizi)
@@ -73,7 +73,7 @@
 
             d3.layout.cloud().size([800,300])
                 .words(beidao_list)
-                .padding(5)
+                .padding(2)
                 .rotate(0)
                 .fontSize(function(d) { return d.size; })
                 .on("end", draw_beidao)
