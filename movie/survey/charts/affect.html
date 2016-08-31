@@ -1,0 +1,314 @@
+
+<!doctype html> <!-- html5 -->
+<html lang="en">
+    <head>
+        <meta http-equiv="x-ua-compatible" content="IE=Edge"/> 
+        <!--
+            Chart ID: 57b49d239973d27524f550ba 
+         
+                                    API  time: 0.333126 seconds 
+         
+        API total time: 0.335 seconds
+        -->
+        <style>
+            html{
+                display: table;
+                width: 100%;
+                height: 100%;
+            }
+            body{
+                margin: 0;
+                padding: 0;
+                font-size: 11px;
+                font-family: Arial, Tahoma, sans-serif;
+                width: 100%;
+                height: 100%;
+                display: table-cell;
+                vertical-align:middle;
+                text-align: center;
+                background-color :transparent;
+                overflow :hidden;
+            }
+            img {
+                width:100%; 
+                height:auto;
+            }
+            .chartblocks.chart{
+                opacity: 0;
+                transition: opacity .5s;
+            }
+            .chartblocks.chart.loaded{
+                opacity: 1;
+            }
+            #loading{
+                width: 50%;
+                height: 50%;
+                margin: auto;
+                overflow: hidden;
+            }
+            #loadingSvg{
+                display: none;
+                margin: auto;
+                opacity:0.15;
+            }
+        </style>
+        <script>
+            var chartResponse = {"chart":{"id":"57b49d239973d27524f550ba","name":"How will it affect your choice on movie if a cast holds different political opinion?","tags":[],"config":{"series":{"ds-0":{"color":["rgb(250, 138, 1)","rgb(245, 197, 118)","rgb(229, 218, 195)"],"labels":{"placement":"inside","color-scheme":"specific","color":"rgb(150, 41, 41)","show":true},"order":0,"source":{"type":"dataset","setId":"57b49b629973d2dc23f550ba","direction":"columns","headersFirst":true,"x":[1],"y":[2],"from":1,"to":null,"limit":null,"offset":null,"sortBy":[],"order":1,"groupBy":[],"groupAccumulator":"avg"},"show":true,"title":"Count"}},"canvas":{"margin":{"left":65,"right":5,"bottom":25,"top":5},"height":320,"background-type":"transparent","width":800,"font-family":"Arial","font-size":"10","font-color":"rgb(188, 188, 188)","background-color":"rgb(255, 255, 255)"},"legend":{"position":{"type":"center-left","coordinates":{"x":42,"y":124.5}},"font-size":"13","style":"vertical","show":true,"font-color":"rgb(102, 102, 102)"},"meta":{"title":{"position":{"coordinates":{"x":61.265625,"y":44},"type":"custom"},"font-size":"19","show":true,"value":"How will it affect your choice on movie if a cast holds different political opinion?","rotate":0,"font-family":"Arial","color":"rgb(102, 102, 102)"}},"tooltip":{"border":{"thickness":0}},"social":{"share":{"show":false},"download":{"show":false}},"options":{"donut":0,"border":{"thickness":3},"offset":270,"portion":180,"lines":true,"horizontal":true,"stacked":true},"type":"pie","axes":{"x":{"label":{"value":"Opinion","show":false,"font-size":16,"font-family":"Arial","color":"rgb(102, 102, 102)"},"show":true,"thickness":0,"ticks":{"show":true,"font-family":"Arial","font-size":14,"color":"rgb(102, 102, 102)"},"grid":{"show":false,"thickness":1,"color":"rgb(102, 102, 102)"},"color":"rgb(188, 188, 188)"},"y":{"label":{"value":null,"show":false,"font-size":16,"font-family":"Arial","color":"rgb(102, 102, 102)"},"show":true,"scale":{"niceValues":true},"thickness":0,"ticks":{"show":true,"font-family":"Arial","font-size":14,"color":"rgb(102, 102, 102)"},"grid":{"show":true,"thickness":1,"color":"rgba(102, 102, 102, 0.3)"},"color":"rgb(188, 188, 188)"},"y2":{"show":false,"scale":{"niceValues":true},"thickness":1,"label":{"show":true,"font-size":12,"font-family":"Arial","color":"rgb(102, 102, 102)"},"ticks":{"show":true,"font-family":"Arial","font-size":12,"color":"rgb(102, 102, 102)"},"grid":{"show":false,"thickness":1,"color":"rgb(102, 102, 102)"},"color":"rgb(188, 188, 188)"}},"branding":{"position":{"type":"bottom-right"},"show":false,"url":"http:\/\/www.chartblocks.com"},"populator":{"url":"https:\/\/api.chartblocks.com\/v1\/chart\/data\/57b49d239973d27524f550ba?t=948e3cc9f9de7e3","interval":300000}},"templateKey":null,"isTemplate":false,"isPublic":true,"totalViews":11,"createdAt":"2016-08-17T17:21:39+00:00","updatedAt":"2016-08-17T17:30:55+00:00","publicUrl":"https:\/\/public.chartblocks.com\/c\/57b49d239973d27524f550ba","versionHash":"b70c36ea","images":{"png":{"name":"PNG","extension":"png","url":"\/\/d3ugvbs94d921r.cloudfront.net\/57b49d239973d27524f550ba.png","enabled":true},"pdf":{"name":"PDF","extension":"pdf","url":"\/\/d3ugvbs94d921r.cloudfront.net\/57b49d239973d27524f550ba.pdf","enabled":false},"svg":{"name":"SVG","extension":"svg","url":"\/\/d3ugvbs94d921r.cloudfront.net\/57b49d239973d27524f550ba.svg","enabled":false},"eps":{"name":"EPS","extension":"eps","url":"\/\/d3ugvbs94d921r.cloudfront.net\/57b49d239973d27524f550ba.eps","enabled":false},"ps":{"name":"PS","extension":"ps","url":"\/\/d3ugvbs94d921r.cloudfront.net\/57b49d239973d27524f550ba.ps","enabled":false}},"editable":false,"creator":{"id":"57b3501d9973d2a954f550bb","nickname":null,"avatarUrl":"\/\/www.gravatar.com\/avatar\/204c03ac9c7566df1884ab30adcb74ce?d=mm","account":{"id":"57b3501d9973d2a954f550be","name":null}},"requestToken":"948e3cc9f9de7e3"},"showAds":false,"data":{"series":{"ds-0":{"values":[{"y":11,"x":"I will not watch the movie because of the different political opinion"},{"y":4,"x":"I will watch the movie because of the different political opinion"},{"y":15,"x":"I choose movie based on itself"}],"format":{"y":"i","x":"s"}}}}};
+            var chart = chartResponse.chart;
+            var data = chartResponse.data;
+            var config = {"api":"https:\/\/api.chartblocks.com\/v1","facebook":{"id":"188124821379778"},"frontendUrl":"\/\/d1rcprd3ybx3ea.cloudfront.net\/1.0.32","google-analytics":{"id":"UA-46682686-1","cookieDomain":"chartblocks.com","domain":"charblocks.com"},"log-entries":{"token":"f330000d-b217-42b7-bd4d-a91ca4844ee7"}};
+
+            window.onload = function () {
+                var loading = document.getElementById('loading');
+                var svg = document.getElementById('loadingSvg');
+                var dimension = Math.min(loading.offsetWidth, loading.offsetHeight);
+                svg.style.width = dimension + 'px';
+                svg.style.height = dimension + 'px';
+                svg.style.display = 'block';
+            };</script>
+    </head>
+    <body scroll="no">
+        <noscript>
+        <img src="//d3ugvbs94d921r.cloudfront.net/57b49d239973d27524f550ba.png?t=948e3cc9f9de7e3"/>
+        <img height="1" width="1" src="https://api.chartblocks.com/v1/stat/record?type=chart&action=view&uid=57b49d239973d27524f550ba&stamp=1471455079"/>
+        </noscript>
+        <div id="loading">
+            <svg id="loadingSvg" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                 viewBox="0 0 296 296"
+                 preserveAspectRatio="xMinYMin meet">
+            <g>
+            <path fill="#FAA61A" d="M9.877,201.054c7.292,18.93,18.331,35.996,32.251,50.253V160.39
+                  C28.568,174.026,17.99,188.117,9.877,201.054z"/>
+            <path fill="#FFCF01" d="M42.127,160.39V44.603C16.077,71.274,0,107.728,0,147.956c0,18.727,3.525,36.613,9.876,53.098
+                  C17.99,188.117,28.568,174.026,42.127,160.39z"/>
+            <path fill="#ED1C24" d="M71.029,147.956c0-4.379,0.396-8.661,1.101-12.84c-11.331,7.951-21.289,16.513-30.002,25.274v90.917
+                  c12.098,12.383,26.331,22.665,42.132,30.214v-90.426C75.911,178.791,71.029,163.943,71.029,147.956z"/>
+            <path fill="#F37321" d="M72.13,135.116c1.863-11.081,6.066-21.366,12.13-30.301V14.388C68.458,21.936,54.226,32.22,42.127,44.603
+                  V160.39C50.841,151.628,60.799,143.066,72.13,135.116z"/>
+            <path fill="#BF65A7" d="M126.385,74.115V1.584C111.508,3.756,97.351,8.134,84.26,14.388v90.427
+                  C94.184,90.189,109.014,79.18,126.385,74.115z"/>
+            <path fill="#92278F" d="M84.26,191.095v90.426c13.091,6.256,27.249,10.632,42.126,12.809v-72.534
+                  C109.014,216.731,94.184,205.718,84.26,191.095z"/>
+            <path fill="#21409A" d="M147.955,224.88c-7.49,0-14.719-1.088-21.57-3.085v72.534c7.044,1.03,14.243,1.579,21.57,1.579
+                  c6.985,0,13.844-0.517,20.568-1.455V222.08C161.974,223.893,155.083,224.88,147.955,224.88z"/>
+            <path fill="#2A75BB" d="M147.955,71.027c7.128,0,14.019,0.989,20.568,2.803V1.456C161.799,0.519,154.94,0,147.955,0
+                  c-7.327,0-14.526,0.555-21.57,1.584v72.531C133.236,72.119,140.465,71.027,147.955,71.027z"/>
+            <path fill="#2F95D2" d="M201.205,92.529c3.106-0.188,6.259-0.33,9.45-0.429V13.936c-13.112-6.145-27.265-10.414-42.132-12.48V73.83
+                  C180.989,77.28,192.146,83.821,201.205,92.529z"/>
+            <path fill="#1C75BC" d="M210.655,103.409V92.1c-3.191,0.099-6.344,0.242-9.45,0.429C204.671,95.859,207.859,99.48,210.655,103.409z
+                  "/>
+            <path fill="#1C75BC" d="M168.523,222.08v72.373c14.867-2.069,29.02-6.333,42.132-12.481v-89.47
+                  C200.55,206.695,185.754,217.308,168.523,222.08z"/>
+            <path fill="#65C1ED" d="M252.791,93.316V43.558c-12.133-12.18-26.387-22.238-42.136-29.621V92.1
+                  C223.939,91.69,237.975,92.059,252.791,93.316z"/>
+            <path fill="#27AAE1" d="M210.655,92.1v11.309c8.947,12.574,14.229,27.938,14.229,44.547c0,16.607-5.282,31.972-14.229,44.546v89.47
+                  c15.749-7.384,30.003-17.439,42.136-29.623V93.316C237.975,92.059,223.939,91.69,210.655,92.1z"/>
+            <path fill="#C0D84B" d="M287.07,97.627c-7.413-20.507-19.196-38.922-34.279-54.07v49.758
+                  C263.781,94.25,275.199,95.667,287.07,97.627z"/>
+
+            <path fill="#8DC63F" d="M294.92,131.042c-1.317-11.603-4.008-22.784-7.85-33.415c-11.871-1.96-23.289-3.377-34.279-4.312v159.033
+                  c22.9-22.997,38.262-53.493,42.129-87.479c0.632-5.556,0.99-11.19,0.99-16.914C295.91,142.23,295.552,136.595,294.92,131.042z"/>
+            </g>
+            </svg>
+        </div>
+        <script type="text/javascript">
+            (function () {
+                // cross browser support for getting elements by classname
+                if (!document.getElementsByClassName) {
+                    document.getElementsByClassName = function (cn) {
+                        var allT = document.getElementsByTagName('*'), allCN = [], i = 0, a;
+                        while (a = allT[i++]) {
+                            a.className == cn ? allCN[allCN.length] = a : null;
+                        }
+                        return allCN;
+                    }
+                }
+
+                // cross browser get document dimensions
+                var getDocumentDimensions = function (window) {
+                    var width = 0, height = 0;
+                    if (typeof (window.innerWidth) == 'number') {
+                        width = window.innerWidth;
+                        height = window.innerHeight;
+                    } else if (window.document.documentElement && (window.document.documentElement.clientWidth || window.document.documentElement.clientHeight)) {
+                        width = window.document.documentElement.clientWidth;
+                        height = window.document.documentElement.clientHeight;
+                    } else if (window.document.body && (window.document.body.clientWidth || window.document.body.clientHeight)) {
+                        width = window.document.body.clientWidth;
+                        height = window.document.body.clientHeight;
+                    }
+                    return {width: width, height: height};
+                };
+
+                var globalResourceLoader = {
+                    master: false,
+                    state: 'notLoaded',
+                    callbacks: [],
+                    loaded: 0,
+                    requireScript: '//d1rcprd3ybx3ea.cloudfront.net/1.0.32/js/lib/chart.full.min.js',
+                    scripts: [
+                        "//d1rcprd3ybx3ea.cloudfront.net/1.0.32/js/cb-stat.js",
+                        "//d1rcprd3ybx3ea.cloudfront.net/1.0.32/js/cb-analytics.min.js",
+                        "//d1rcprd3ybx3ea.cloudfront.net/1.0.32/js/cb-logger.min.js"
+                    ],
+                    load: function (targetWindow, callback) {
+                        // If scripts have already been loaded run the callback
+                        if (this.state === 'ready') {
+                            this.prepareFrame(targetWindow, callback);
+                        } else {
+                            // else we need to save the callback till our scripts are loaded
+                            this.callbacks.push({window: targetWindow, callback: callback});
+                        }
+
+                        if (this.state === 'notLoaded') {
+                            this.state = 'loading';
+                            // On script load change the state to ready and run our saved callbacks
+                            var that = this;
+                            this.loadScripts(function () {
+                                that.state = 'ready';
+                                for (var y in that.callbacks) {
+                                    that.prepareFrame(that.callbacks[y].window, that.callbacks[y].callback);
+                                }
+                            });
+                        }
+                    },
+                    prepareFrame: function (targetWindow, callback) {
+                        targetWindow.require = window.require;
+                        targetWindow.define = window.define;
+                        callback.call(targetWindow, targetWindow);
+                    },
+                    loadScripts: function (callback) {
+                        var that = this;
+                        // we have to load require before loading the remaining scripts or "define is not defined."
+                        this.addScript(this.requireScript, function () {
+                            var scripts = that.scripts;
+                            for (var x in scripts) {
+
+                                that.addScript(scripts[x], function () {
+                                    that.loaded++;
+                                    if (that.loaded === scripts.length) {
+                                        callback();
+                                    }
+                                });
+                            }
+                        });
+                    },
+                    addScript: function (src, callback) {
+                        var script = document.createElement('script');
+                        script.setAttribute('src', src);
+                        var head = document.getElementsByTagName('head')[0];
+                        var scriptLoaded = false;
+                        script.onload = script.onreadystatechange = function () {
+                            if (scriptLoaded === false && (!this.readyState || this.readyState === "loaded" || this.readyState === "complete")) {
+                                scriptLoaded = true;
+                                callback();
+                            }
+                        };
+                        head.appendChild(script);
+                    }
+                };
+
+                var localResourceManager = {
+                    getResourceLoader: function () {
+                        // Find the master resourceLoader in our siblings or we become the master.
+                        if (!document.documentMode || (document.documentMode && +document.documentMode > 9)) {
+                            var frames = window.parent.frames;
+                            for (var i = 0; i < frames.length; i++) {
+
+                                var frame = frames[i];
+                                if (this.hasIframeAccess(frame) && frame !== window && 'globalResourceLoader' in frame) {
+                                    return frame.globalResourceLoader;
+                                }
+                            }
+                        }
+
+                        // no global resource loader found in other windows, making our own
+                        window.globalResourceLoader = globalResourceLoader;
+                        return globalResourceLoader;
+                    },
+                    hasIframeAccess: function (frame) {
+                        var key = Math.random();
+                        try {
+                            var global = frame.contentWindow || frame.window;
+                            global[key] = "asd";
+                            return global[key] === "asd";
+                        }
+                        catch (e) {
+                            return false;
+                        }
+                    },
+                    load: function (callback) {
+                        var resourceLoader = this.getResourceLoader();
+                        resourceLoader.load(window, callback);
+                    }
+                };
+
+                localResourceManager.load(function () {
+                    require([
+                        'underscore',
+                        'chart/lazyFactory',
+                        'chart/plugins/social',
+                        'chart/populator/ajax',
+                        'chart/populator/config',
+                        'stat/stat',
+                        'logger/logger',
+                        'analytics/analytics',
+                        'analytics/provider/ga'
+                    ], function (_, ChartFactory, Social, AjaxPopulator, ConfigPopulator, Stat, Logger, Analytics, GoogleAnalytics) {
+                        var factory = new ChartFactory({chart: window.chart, target: window.document.body});
+
+                        factory.createService(function (renderer, type) {
+
+                            renderer.addPlugin('populator', new ConfigPopulator({data: window.data}));
+
+                            var socialConfig = {};
+                            _.extend(socialConfig, window.config, window.chart.config.social);
+
+                            var analytics = new Analytics([
+                                new GoogleAnalytics(window.config['google-analytics'])
+                            ]);
+
+                            var socialPlugin = new Social(socialConfig);
+                            socialPlugin.setAnalyticsWriter(analytics);
+
+                            renderer.setDimensions(getDocumentDimensions(window));
+                            renderer.addPlugin('social', socialPlugin);
+                            renderer.once('after:render', function () {
+                                var div = window.document.getElementsByClassName('chartblocks chart');
+                                div[0].className = div[0].className + " loaded";
+
+                                var loading = window.document.getElementById('loading');
+                                loading.parentNode.removeChild(loading);
+
+                                window.onresize = _.debounce(function () {
+                                    var dimensions = getDocumentDimensions(window);
+                                    renderer.setDimensions(dimensions);
+                                }, (type === 'svg') ? 250 : 1000);
+
+                                if (type === 'svg') {
+                                    renderer.removePlugin('populator');
+                                    var ajaxPopulator = new AjaxPopulator(window.chart.config.populator);
+                                    renderer.addPlugin('populator', ajaxPopulator);
+                                    ajaxPopulator.startPollData();
+                                }
+                            });
+
+                            renderer.once('after:render', function () {
+                                var stat = new Stat(window.config.api + '/stat/');
+                                stat.record('chart', window.chart.id, 'view', {
+                                    context: 'embed',
+                                    location: window.document.referrer,
+                                    engine: type
+                                });
+                            });
+
+                            _.defer(function () {
+                                renderer.render();
+                            });
+                        });
+                    });
+                });
+            })();
+        </script>
+    </body>
+</html>
