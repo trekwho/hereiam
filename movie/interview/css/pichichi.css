@@ -595,7 +595,9 @@ footer {
 	clear: both;
 }
 
-
+footer a, footer a:visited{
+	color: #ccc;
+}
 /* Responsive grid */
 
 
