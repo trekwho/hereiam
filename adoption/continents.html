@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Continent ratio</title>
+    <style type="text/css">
+        body{
+            background-color: #eee;
+        }
+
+        #main{
+            height: 550px;
+            width: 80%;
+            margin: auto;
+        }
+
+        p#source{
+            width: 70%;
+            margin: auto;
+            text-align: center;
+            font-size: 12px;
+            font-family: sans-serif;
+            color: #aaa;
+        }
+
+        a.source, a.source:hover, a.source:active{
+            text-decoration: none;
+            color:#bbb;
+        }
+    </style>
+</head>
+<body>
+    <div id="main"></div>
+    <p id="source">Data source:    <a class="source" href="https://travel.state.gov/content/adoptionsabroad/en/about-us/statistics.html" target="_blank">Bureau of Consular Affairs</a>；<a class="source" href="http://www.johnstonsarchive.net/policy/adoptionstatsintl.html?nsukey=m5K03oIc6vajqwrixiHjId4KDUxEKmNwU7u5vpTqLyMyPAIaKb8iuDGnIGhRflohY6td7Z0L3qYi8fmCvf0UwkW0Od%2FSJVxRGYtQVnKwwr%2BAVLu4VF6JqyLpWP2yKacIp7xUYOwRptX9oQaxoBEGfpFilL2FBjHNqkzSVqX4LC%2FHXdDK8iOcUPuRnkRAYS5I" target="_blank">Robert Johnston</a> </p>
+    
+    <script src="http://echarts.baidu.com/build/dist/echarts.js"></script>
+    <script type="text/javascript">
+        require.config({
+            paths: {
+                echarts: 'http://echarts.baidu.com/build/dist'
+            }
+        });
+
+        require(
+            [
+                'echarts',
+                'echarts/chart/pie' 
+            ],
+            function (ec) {
+                var myChart = ec.init(document.getElementById('main'),'infographic'); 
+                
+                var labelRight = {normal: {label : {position: 'right'}}};
+                option = {
+                     title: {
+                        text: 'Adoption : continent ratio',
+                        subtext: 'Totals from 1999 to 2013',
+                    },
+                    tooltip : {
+                        trigger: 'item',
+                        formatter: "{a} <br/>{b} : {c} ({d}%)"
+                    },
+                    legend: {
+                        orient : 'horizontal',
+                        x : 'center',
+                        y:'bottom',
+                        data:['Africa','Asia','Asia (less PRC, Russia, ROK)','China, PR','Europe','Europe (less Russia)','Korea, Republic of','North America (less USA)','Oceania and Australia','Russia','South America','Unknown']
+                    },
+                    calculable : false,
+                    series : [
+                        {
+                            name:'Adaoption ratio by continents',
+                            type:'pie',
+                            selectedMode: 'single',
+                            radius : [0, 100],
+                            minAngle: 2,
+                            
+                            itemStyle : {
+                                normal : {
+                                    label : {
+                                        position : 'inner',
+                                        distance:0.7
+                                    },
+                                    labelLine : {
+                                        show : false
+                                    }
+                                }
+                            },
+                            data:[
+                                {value:120722, name:'Asia'},
+                                {value:36356, name:'North America'},
+                                {value:64863, name:'Europe'},
+                                {value:21677, name:'Africa'},
+                                {value:6040, name:'South America'},
+                                {value:332, name:'Oceania'},
+                                {value:361, name:'Unknown'}
+                            ]
+                        },
+                        {
+                            name:'Adaoption ratio by continents',
+                            type:'pie',
+                            radius : [110, 170],
+                            minAngle: 2,
+                            
+                            data:[
+                                {value:71633, name:'China, PR'},
+                                {value:19384, name:'Korea, Republic of'},
+                                {value:29705, name:'Asia (less PRC, Russia, ROK)'},
+                                {value:36356, name:'North America (less USA)'},
+                                {value:46110, name:'Russia'},
+                                {value:18753, name:'Europe (less Russia)'},
+                                {value:21677, name:'Africa'},
+                                {value:6040, name:'South America'},
+                                {value:332, name:'Oceania and Australia'},
+                                {value:361, name:'Unknown'}
+                            ]
+                        }
+                    ]
+                };                                
+                
+            
+                    myChart.setOption(option); 
+                }
+            );
+    </script>
+</body>
+</html>

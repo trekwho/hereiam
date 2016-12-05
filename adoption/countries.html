@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Countries &amps; Years</title>
+    <style type="text/css">
+        body{
+            background-color: #eee;
+        }
+
+        #main{
+            height: 550px;
+            width: 80%;
+            margin: auto;
+        }
+
+        p#source{
+            width: 80%;
+            margin: auto;
+            text-align: center;
+            font-size: 12px;
+            font-family: sans-serif;
+            color: #aaa;
+        }
+
+        a.source, a.source:hover, a.source:active{
+            text-decoration: none;
+            color:#bbb;
+        }
+    </style>
+</head>
+<body>
+    <div id="main"></div>
+   <p id="source">Data source:    <a class="source" href="https://travel.state.gov/content/adoptionsabroad/en/about-us/statistics.html" target="_blank">Bureau of Consular Affairs</a>；<a class="source" href="http://www.johnstonsarchive.net/policy/adoptionstatsintl.html?nsukey=m5K03oIc6vajqwrixiHjId4KDUxEKmNwU7u5vpTqLyMyPAIaKb8iuDGnIGhRflohY6td7Z0L3qYi8fmCvf0UwkW0Od%2FSJVxRGYtQVnKwwr%2BAVLu4VF6JqyLpWP2yKacIp7xUYOwRptX9oQaxoBEGfpFilL2FBjHNqkzSVqX4LC%2FHXdDK8iOcUPuRnkRAYS5I" target="_blank">Robert Johnston</a> </p>
+    
+    <script src="http://echarts.baidu.com/build/dist/echarts.js"></script>
+    <script type="text/javascript">
+        require.config({
+            paths: {
+                echarts: 'http://echarts.baidu.com/build/dist'
+            }
+        });
+
+        require(
+            [
+                'echarts',
+                'echarts/chart/bar' 
+            ],
+            function (ec) {
+                var myChart = ec.init(document.getElementById('main')); 
+                
+                option = {
+                    timeline:{
+                        data:['1999-01-01','2000-01-01','2001-01-01','2002-01-01','2003-01-01','2004-01-01','2005-01-01','2006-01-01','2007-01-01','2008-01-01','2009-01-01','2010-01-01','2011-01-01','2012-01-01','2013-01-01',
+                        ],
+                        label : {
+                            formatter : function(s) {
+                                return s.slice(0, 4);
+                            }
+                        },
+                        autoPlay : true,
+                        playInterval : 1000
+                    },
+                    options:[
+                        {
+                            title : {
+                                'text':'U.S. international adoptions by sending nation 1999-2013',
+                                // 'subtext':''
+                            },
+                            tooltip : {
+                                'trigger':'axis',
+                                axisPointer : {           
+                                    type : 'shadow'        
+                                }
+                            },
+                            legend : {
+                                x:'right',
+                                'data':['Numbers']
+                            },
+                            calculable : true,
+                            grid : {'y':80,'y2':100},
+                            xAxis : [{
+                                'type':'category',
+                                'axisLabel':{'interval':0, rotate: 10},
+                                'data':[
+                                    'China','Russia','North America (less USA)','Asia (less PRC, Russia, ROK)','Korea, Republic of','Europe (less Russia)','Africa','South America','Oceania and Australia','Unknown'
+                                ]
+                            }],
+                            yAxis : [
+                                {
+                                    'type':'value',
+                                    'name':'Numbers of adopted',
+                                    'max':7903
+                                }
+                            ],
+                            series : [
+                                {
+                                    'name':'Numbers',
+                                    'type':'bar',
+                                    'markLine':{
+                                        symbol : ['arrow','none'],
+                                        symbolSize : [4, 2],
+                                        itemStyle : {
+                                            normal: {
+                                                lineStyle: {color:'orange'},
+                                                barBorderColor:'orange',
+                                                label:{
+                                                    position:'left',
+                                                    formatter:function(params){
+                                                        return Math.round(params.value);
+                                                    },
+                                                    textStyle:{color:'orange'}
+                                                }
+                                            }
+                                        },
+                                        'data':[{'type':'average','name':'Average'}]
+                                    },
+                                    'data': dataMap.dataNum['1999']
+                                }
+                            ]
+                        },
+                        {
+                            title : {'text':'U.S. international adoptions by sending nation 2000'},
+                            series : [
+                                {'data': dataMap.dataNum['2000']}
+                            ]
+                        },
+                         {
+                            title : {'text':'U.S. international adoptions by sending nation 2001'},
+                            series : [
+                                {'data': dataMap.dataNum['2001']}
+                            ]
+                        },
+                        {
+                            title : {'text':'U.S. international adoptions by sending nation 2002'},
+                            series : [
+                                {'data': dataMap.dataNum['2002']}
+                            ]
+                        },
+                         {
+                            title : {'text':'U.S. international adoptions by sending nation 2003'},
+                            series : [
+                                {'data': dataMap.dataNum['2003']}
+                            ]
+                        },
+                        {
+                            title : {'text':'U.S. international adoptions by sending nation 2004'},
+                            series : [
+                                {'data': dataMap.dataNum['2004']}
+                            ]
+                        },
+                        {
+                            title : {'text':'U.S. international adoptions by sending nation 2005'},
+                            series : [
+                                {'data': dataMap.dataNum['2005']}
+                            ]
+                        },
+                        {
+                            title : {'text':'U.S. international adoptions by sending nation 2006'},
+                            series : [
+                                {'data': dataMap.dataNum['2006']}
+                            ]
+                        },
+                        {
+                            title : {'text':'U.S. international adoptions by sending nation 2007'},
+                            series : [
+                                {'data': dataMap.dataNum['2007']}
+                            ]
+                        },
+                        {
+                            title : {'text':'U.S. international adoptions by sending nation 2008'},
+                            series : [
+                                {'data': dataMap.dataNum['2008']}
+                            ]
+                        },
+                        {
+                            title : {'text':'U.S. international adoptions by sending nation 2009'},
+                            series : [
+                                {'data': dataMap.dataNum['2009']}
+                            ]
+                        },
+                        {
+                            title : {'text':'U.S. international adoptions by sending nation 2010'},
+                            series : [
+                                {'data': dataMap.dataNum['2010']}
+                            ]
+                        },
+                        {
+                            title : {'text':'U.S. international adoptions by sending nation 2011'},
+                            series : [
+                                {'data': dataMap.dataNum['2011']}
+                            ]
+                        },
+                        {
+                            title : {'text':'U.S. international adoptions by sending nation 2012'},
+                            series : [
+                                {'data': dataMap.dataNum['2012']}
+                            ]
+                        },
+                        {
+                            title : {'text':'U.S. international adoptions by sending nation 2013'},
+                            series : [
+                                {'data': dataMap.dataNum['2013']}
+                            ]
+                        }
+                    ]
+                };
+                    
+                    
+        
+                myChart.setOption(option); 
+            }
+        );
+        
+        var dataMap = {};
+
+        function dataFormatter(obj) {
+            var pList = ['China','Russia','North America (less USA)','Asia (less PRC, Russia, ROK)','Korea, Republic of','Europe (less Russia)','Africa','South America','Oceania and Australia','Unknown'];
+            var temp;
+            var max = 0;
+            for (var year = 1999; year <= 2013; year++) {
+                temp = obj[year];
+                for (var i = 0, l = temp.length; i < l; i++) {
+                    max = Math.max(max, temp[i]);
+                    obj[year][i] = {
+                        name : pList[i],
+                        value : temp[i]
+                    }
+                }
+                obj[year+'max'] = Math.floor(max/100) * 100;
+            }
+            return obj;
+        }
+
+        dataMap.dataNum = dataFormatter({
+            2013:[2306,250,645,565,138,794,2098,265,33,0], 
+            2012:[2697,748,315,660,627,690,2610,294,27,0], 
+            2011:[2587,962,275,966,736,875,2548,297,6,67], 
+            2010:[3401,1079,368,1164,865,657,3147,341,27,9],
+            2009:[3000,1586,1291,1866,1079,769,2765,351,33,4],
+            2008:[3912,1857,4649,2399,1064,714,2409,438,9,5], 
+            2007:[5453,2303,5167,2576,938,869,1834,450,13,5],    
+            2006:[6492,3702,4693,1907,1373,659,1340,502,7,5],
+            2005:[7903,4631,4295,1832,1628,1106,865,443,21,10],
+            2004:[7038,5862,3864,2023,1713,1387,605,448,44,7],    
+            2003:[6857,5221,2765,2647,1793,1483,423,402,59,4],
+            2002:[6116,4950,2773,3057,1776,1966,341,467,19,2], 
+            2001:[4705,4292,1985,3284,1862,2730,336,432,19,7],    
+            2000:[5058,4286,1879,2828,1784,2353,206,452,10,1],   
+            1999:[4108,4381,1392,1931,2008,1701,150,458,5,235] 
+        });
+
+    </script>
+
+</body>
+</html>
